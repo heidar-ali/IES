@@ -329,15 +329,23 @@ err:
     End Sub
 
     Private Sub cmdBrowse_Click(sender As System.Object, e As System.EventArgs) Handles cmdBrowse.Click
+        If Len(txtSearch.Text) < 1 Then
+            MsgBox("Unable to search." & vbNewLine & "No value to search in the records", vbExclamation, "Unable to Search")
+            txtSearch.Focus()
+            Exit Sub
+        End If
+
+        FilterMajorDiscipline(txtSearch.Text)
 
     End Sub
 
-    Public Sub FillMajorDiscipline()
+    Public Sub FilterMajorDiscipline(ByVal Value As String)
         Dim a As Integer
         Dim row As Integer = 1
 
         Dim com As New MySqlCommand("SELECT tbldisciplinemajorgroups.Description AS `MAJOR GROUP`, tbldisciplinemajors.MajorDiscCode AS `MAJOR CODE`, tbldisciplinemajors.MajorDescription AS `MAJOR DISCIPLINE`, tbldisciplinemajors.ID " & _
-                                    "FROM tbldisciplinemajorgroups INNER JOIN tbldisciplinemajors ON tbldisciplinemajorgroups.ID = tbldisciplinemajors.MajorGroup ORDER BY tblDisciplineMajors.MajorGroup", clsCon.con)
+                                    "FROM tbldisciplinemajorgroups INNER JOIN tbldisciplinemajors ON tbldisciplinemajorgroups.ID = tbldisciplinemajors.MajorGroup " & _
+                                    "WHERE tbldisciplinemajors.MajorDiscCode LIKE '%" & Value & "%' OR tbldisciplinemajors.MajorDescription LIKE '%" & Value & "%' ORDER BY tblDisciplineMajors.MajorGroup", clsCon.con)
         'Dim vRS As MySqlDataReader = com.ExecuteReader()
         Dim ds As New DataSet()
         Dim dA As New MySqlDataAdapter()
@@ -372,5 +380,9 @@ err:
         fgMajor.Cols(3).AllowEditing = False
         fgMajor.Cols(3).AllowResizing = False
 
+    End Sub
+
+    Private Sub txtSearch_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles txtSearch.KeyDown
+        cmdBrowse_Click(sender, e)
     End Sub
 End Class

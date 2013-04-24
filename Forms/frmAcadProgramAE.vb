@@ -86,6 +86,7 @@ Public Class frmAcadProgramAE
                 cboStatusID.Text = Stat.StatusCode
             End If
 
+
             Select Case (vProg.ProgramSemester / vProg.ProgramYears)
                 Case 2
                     cboTerm1.Text = "Semestral"
@@ -98,34 +99,45 @@ Public Class frmAcadProgramAE
                     cboTermID.Text = YearTerm.YearlyHS
             End Select
 
+            '=========================== PROGRAM CLASS ====================================
             If GetProgramClass(vProg.Classification, vClass) = TranDBResult.Success Then
                 cboClassification1.Text = vClass.ClassDesc
                 cboClassificationID.Text = vClass.ClassCode
             End If
 
+            '=========================== PROGRAM THESIS ===================================
             If GetProgramThesis(vProg.ThesisReqID, Thes) = TranDBResult.Success Then
                 cboThesisOption.Text = Thes.ThesisReqDesc
                 cboThesisID.Text = Thes.ThesisReqID
             End If
 
-
+            '========================== PROGRAM BOARD EXAM ================================
             If GetProgramBoardExam(vProg.BoardExam, Board) = TranDBResult.Success Then
                 cboBoardExam.Text = Board.BoardExamDesc
                 cboBoardID.Text = vProg.BoardExam
             End If
 
+            '========================== PROGRAM LADDER =====================================
+            If GetProgramLadder(vProg.IsProgLadder, Ladder) Then
+                cboLadder.Text = Ladder.LadderDesc
+                cboLadderID.Text = Ladder.LadderCode
+            End If
+
+            '========================= PROGRAM PARENT ======================================
             If GetProgramByProgramID(vProg.ProgParent, vProg) = TranDBResult.Success Then
                 cboParent.Text = vProg.ProgramCode
                 cboParentID.Text = vProg.ProgID
             End If
 
+
             dtpRecognize.Text = vProg.ProgRecognize
             dtpRevise.Text = vProg.ProgRevise
 
+
+            '========================= MAJOR DISCIPLINE CATEGORY =============================
             If GetMajorGroupByID(vProg.MajorDiscGroupCode, Maj) = TranDBResult.Success Then
                 cboDiscipline.Text = Maj.Description
                 cboDisciplineID.Text = Maj.GroupID
-                'cboDiscipline_SelectedIndexChanged(Me, New System.EventArgs)
             End If
 
             FillMajorByGroup(cboDisciplineID.Text)

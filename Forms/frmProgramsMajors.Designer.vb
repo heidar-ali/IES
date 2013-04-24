@@ -72,6 +72,8 @@ Partial Class frmProgramsMajors
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator14 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
+        Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.cmdBrowse = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip3 = New System.Windows.Forms.StatusStrip()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
@@ -100,8 +102,6 @@ Partial Class frmProgramsMajors
         Me.columnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.columnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.miniToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.popPrograms.SuspendLayout()
         Me.tabControl1.SuspendLayout()
         Me.tabPage1.SuspendLayout()
@@ -552,6 +552,18 @@ Partial Class frmProgramsMajors
         Me.toolStripSeparator14.Name = "toolStripSeparator14"
         Me.toolStripSeparator14.Size = New System.Drawing.Size(6, 25)
         '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(42, 22)
+        Me.ToolStripLabel3.Text = "Search"
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(200, 25)
+        '
         'cmdBrowse
         '
         Me.cmdBrowse.Image = CType(resources.GetObject("cmdBrowse.Image"), System.Drawing.Image)
@@ -777,18 +789,6 @@ Partial Class frmProgramsMajors
         Me.miniToolStrip.Name = "miniToolStrip"
         Me.miniToolStrip.Size = New System.Drawing.Size(1145, 25)
         Me.miniToolStrip.TabIndex = 11
-        '
-        'txtSearch
-        '
-        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(200, 25)
-        '
-        'ToolStripLabel3
-        '
-        Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(42, 22)
-        Me.ToolStripLabel3.Text = "Search"
         '
         'frmProgramsMajors
         '
