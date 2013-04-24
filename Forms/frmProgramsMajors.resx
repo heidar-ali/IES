@@ -650,6 +650,74 @@
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>573, 17</value>
+  </metadata>
+  <data name="fgMajor.ColumnInfo" xml:space="preserve">
+    <value>4,0,0,0,0,105,Columns:0{Width:231;Name:"MAJOR GROUP";Caption:"MAJOR GROUP";Style:"DataType:System.String;TextAlign:LeftCenter;";StyleFixed:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;";}	1{Width:292;Name:"MAJOR CODE";Caption:"MAJOR CODE";Style:"DataType:System.String;TextAlign:LeftCenter;";StyleFixed:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;";}	2{Width:312;Name:"MAJOR DISCIPLINE";Caption:"MAJOR DISCIPLINE";Style:"DataType:System.String;TextAlign:LeftCenter;";StyleFixed:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;";}	3{AllowSorting:False;Name:"ID";Caption:"ID";AllowDragging:False;AllowResizing:False;AllowEditing:False;Style:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;Border:Flat,0,Control,Both;";StyleFixed:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;";}	</value>
+  </data>
+  <metadata name="popMajor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>689, 17</value>
+  </metadata>
+  <data name="fgMajor.StyleInfo" xml:space="preserve">
+    <value>Normal{Font:Tahoma, 9pt;}	Alternate{}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Focus{}	Editor{}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
+  </data>
+  <metadata name="ToolStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>356, 56</value>
+  </metadata>
+  <data name="NewToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVDhPrZDbSgJRGIXnpewd6jXsjSQvIrwoI0RQMChU
+        0iiDPCGiE3ZCRkvR8VzTeBhnyR5/ccaZNnPhB4t9sdf6Ln5hb8QeathNJFVFKF5C8DqL4ksDVHWGDf7j
+        LHyPg6NjviSaFqlu5yQYR+KpupaIkrMknCxT3Y7v/NYYb0ITK1c3BarbWWhLQ7IR0cTKReyZ6lZ0XYei
+        ztHpK4bAc+h1FgQijzSxMptrGIxVSO0xX3AaStFki7bUMVFmaMm/eJMGfIH/MkGzLep0AXn4h/r3CJV3
+        mS9gn2bY4UY/UzQ7E9TqfeTFtnuB+XAfzSHKr11kSl/uBebDiZ89ZCst3OUkdwL28sIVsE83ock+EIQV
+        2Mz2wxeg6/UAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ToolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADrSURBVDhPY6AKeChg9v+hju9/KJd08EDW8f99Bs3/hzXd
+        yDfkjLgl2JBtblE4DXnuEA9WA+ViAnyGgDXzmf7vScrC78qzElYYhjySd/5/V8OLsGYYABlyg10PbMgD
+        frP/12wjidcMAzc59MEuOaLtTrrmV/GVYM3X2XT+X2PVJs2A1wlVYM2HzQP/xwUE/z8uZAw2CF/swAFc
+        s0XQ/5SUFLgG5DCBCmECmLMvydj+j4+Px1CI1xCY5ttcBv+z/IL/p6amYrUJlFJB6jAMgRmwTMMep2YY
+        2BSQBHYJlIsAeXl5/0EYyqUXYGAAANeEpHDEgq6YAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ToolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGBSURBVDhPY6AZcJ55/79a1eX/Wo0X/3t2n/sPFSYMsja/
+        +y894cd/rWl//9su///fGYhL9v0HGwZVgh9IdtyGKyzb+Oy/dveT/+Eb/v+vO/z/v1bFBbBc2MQ7/71a
+        b2EamL/qCVZbTLofgV3Rcer/f4GIjf/nnf//36zsBHEugoGy7T/+Tz3zH4w33P//36nmGGkGWNad/b/g
+        5n8w3n7n//+g2oOoBngvePA/aPGD/+4LX/33nv/if9D8x2AF2XOugDXtefj//9FHEBqEC3qQXJC37Pb/
+        p58hCkCmL7kECbS8lffBilJm3fnv13ntv1fblf9e7ccxnR8869r/iy8hGkEBBIp7qBRxwHPSNbCzQJpB
+        gZSw7A1pBth0Xf3feujvf+HiY//7TkISjlYjlnjGBRwn3P8fteQVWINqxbn/ydv//4/c9P+/StWN/yWL
+        EAlLPGYPcYaCkq3/uv9gDErOoGQtWf/mf/5sElwV0Xfmv3zBuf/iuWf/21aSmOqIBwwMACdXFoS6tFrN
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="cmdBrowse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADGSURBVDhPYxhcwD1l2n8QNg3o+A8VAgNc4hgApOjHj9//
+        BTRSMAzAJo4CYDZouNSCFcJswyWOAWC2zN105b919HS4bbjEMQC6TTDbsIlDtSAASBEI3H349v+Goy/h
+        NpU37AAbgC7n6lqOMGTy1stgRfvPPAPj/M7dcANgLsAmBzcE5kQQlrGsAGOYU4W1Q+BewCYPNwAUSEt3
+        3Ppf3LP/v0vaMoQkFOBVM/gMwBbXeNWAJB1i+sDxrGxbCpbAZgAhNWQCBgYAPLFdcuIdPt8AAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <metadata name="StatusStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>239, 56</value>
+  </metadata>
+  <metadata name="StatusStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 56</value>
+  </metadata>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <data name="cmdPrintAcademicPrograms.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -673,12 +741,6 @@
   </data>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>573, 17</value>
-  </metadata>
-  <data name="fgMajor.ColumnInfo" xml:space="preserve">
-    <value>4,0,0,0,0,105,Columns:0{Width:231;Name:"MAJOR GROUP";Caption:"MAJOR GROUP";Style:"DataType:System.String;TextAlign:LeftCenter;";StyleFixed:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;";}	1{Width:292;Name:"MAJOR CODE";Caption:"MAJOR CODE";Style:"DataType:System.String;TextAlign:LeftCenter;";StyleFixed:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;";}	2{Width:312;Name:"MAJOR DISCIPLINE";Caption:"MAJOR DISCIPLINE";Style:"DataType:System.String;TextAlign:LeftCenter;";StyleFixed:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;";}	3{AllowSorting:False;Name:"ID";Caption:"ID";AllowDragging:False;AllowResizing:False;AllowEditing:False;Style:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;Border:Flat,0,Control,Both;";StyleFixed:"Font:Tahoma, 9pt;Margins:1, 0, 0, 0;TextAlign:CenterCenter;TextEffect:Flat;TextDirection:Normal;Trimming:None;";}	</value>
-  </data>
-  <metadata name="popMajor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>689, 17</value>
   </metadata>
   <data name="cmdNewMajor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -733,59 +795,6 @@
         DAAnVxaEurRazQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="fgMajor.StyleInfo" xml:space="preserve">
-    <value>Normal{Font:Tahoma, 9pt;}	Alternate{}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Focus{}	Editor{}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
-  </data>
-  <metadata name="ToolStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>356, 56</value>
-  </metadata>
-  <data name="NewToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVDhPrZDbSgJRGIXnpewd6jXsjSQvIrwoI0RQMChU
-        0iiDPCGiE3ZCRkvR8VzTeBhnyR5/ccaZNnPhB4t9sdf6Ln5hb8QeathNJFVFKF5C8DqL4ksDVHWGDf7j
-        LHyPg6NjviSaFqlu5yQYR+KpupaIkrMknCxT3Y7v/NYYb0ITK1c3BarbWWhLQ7IR0cTKReyZ6lZ0XYei
-        ztHpK4bAc+h1FgQijzSxMptrGIxVSO0xX3AaStFki7bUMVFmaMm/eJMGfIH/MkGzLep0AXn4h/r3CJV3
-        mS9gn2bY4UY/UzQ7E9TqfeTFtnuB+XAfzSHKr11kSl/uBebDiZ89ZCst3OUkdwL28sIVsE83ock+EIQV
-        2Mz2wxeg6/UAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ToolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADrSURBVDhPY6AKeChg9v+hju9/KJd08EDW8f99Bs3/hzXd
-        yDfkjLgl2JBtblE4DXnuEA9WA+ViAnyGgDXzmf7vScrC78qzElYYhjySd/5/V8OLsGYYABlyg10PbMgD
-        frP/12wjidcMAzc59MEuOaLtTrrmV/GVYM3X2XT+X2PVJs2A1wlVYM2HzQP/xwUE/z8uZAw2CF/swAFc
-        s0XQ/5SUFLgG5DCBCmECmLMvydj+j4+Px1CI1xCY5ttcBv+z/IL/p6amYrUJlFJB6jAMgRmwTMMep2YY
-        2BSQBHYJlIsAeXl5/0EYyqUXYGAAANeEpHDEgq6YAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ToolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGBSURBVDhPY6AZcJ55/79a1eX/Wo0X/3t2n/sPFSYMsja/
-        +y894cd/rWl//9su///fGYhL9v0HGwZVgh9IdtyGKyzb+Oy/dveT/+Eb/v+vO/z/v1bFBbBc2MQ7/71a
-        b2EamL/qCVZbTLofgV3Rcer/f4GIjf/nnf//36zsBHEugoGy7T/+Tz3zH4w33P//36nmGGkGWNad/b/g
-        5n8w3n7n//+g2oOoBngvePA/aPGD/+4LX/33nv/if9D8x2AF2XOugDXtefj//9FHEBqEC3qQXJC37Pb/
-        p58hCkCmL7kECbS8lffBilJm3fnv13ntv1fblf9e7ccxnR8869r/iy8hGkEBBIp7qBRxwHPSNbCzQJpB
-        gZSw7A1pBth0Xf3feujvf+HiY//7TkISjlYjlnjGBRwn3P8fteQVWINqxbn/ydv//4/c9P+/StWN/yWL
-        EAlLPGYPcYaCkq3/uv9gDErOoGQtWf/mf/5sElwV0Xfmv3zBuf/iuWf/21aSmOqIBwwMACdXFoS6tFrN
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="cmdBrowse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADGSURBVDhPYxhcwD1l2n8QNg3o+A8VAgNc4hgApOjHj9//
-        BTRSMAzAJo4CYDZouNSCFcJswyWOAWC2zN105b919HS4bbjEMQC6TTDbsIlDtSAASBEI3H349v+Goy/h
-        NpU37AAbgC7n6lqOMGTy1stgRfvPPAPj/M7dcANgLsAmBzcE5kQQlrGsAGOYU4W1Q+BewCYPNwAUSEt3
-        3Ppf3LP/v0vaMoQkFOBVM/gMwBbXeNWAJB1i+sDxrGxbCpbAZgAhNWQCBgYAPLFdcuIdPt8AAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <metadata name="StatusStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>239, 56</value>
-  </metadata>
   <metadata name="popMajorGroups.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>794, 17</value>
   </metadata>

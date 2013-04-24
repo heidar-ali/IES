@@ -206,6 +206,7 @@ ReleaseAndExit:
 
     Public Function EditAcademicProgram(ByVal newProg As tAcademicPrograms) As TranDBResult
         'find duplicate ID
+        On Error GoTo ReleaseAndExit
 
         If ProgramExistByID(newProg.ProgID) = TranDBResult.Success Then
 
@@ -217,7 +218,7 @@ ReleaseAndExit:
                                         "',ProgYears ='" & newProg.ProgramYears & _
                                         "',ProgSems = '" & newProg.ProgramSemester & _
                                         "',ProgDiscipline ='" & newProg.ProgDiscipline & _
-                                        "',Semestral= '1'" & _
+                                        "',Semestral= '" & newProg.Semestral & _
                                         "',MaxResidency ='" & newProg.MaxResidency & _
                                         "',TotalAcadSubject='" & newProg.TotalAcadSubject & _
                                         "',TotalAcadCreditUnits = '" & newProg.TotalCreditUnits & _
@@ -235,7 +236,7 @@ ReleaseAndExit:
                                         "',Weight='" & newProg.Weight & _
                                         "',Alias='" & newProg.Alias1 & _
                                         "',ProgChairID='1'" & _
-                                        "' WHERE ProgID='" & newProg.ProgID & "'", clsCon.con)
+                                        " WHERE ProgID='" & newProg.ProgID & "'", clsCon.con)
 
             com.Parameters.Add("@Recognize", MySqlDbType.Date).Value = newProg.ProgRecognize
             com.Parameters.Add("@Revise", MySqlDbType.Date).Value = newProg.ProgRevise
@@ -246,9 +247,12 @@ ReleaseAndExit:
             EditAcademicProgram = TranDBResult.Success
 
         End If
+        Exit Function
+
 ReleaseAndExit:
         'release
-        Exit Function
+        EditAcademicProgram = TranDBResult.Failed
+        DisplayErrorMsg("modDBAcademicProgramMajors", "EditAcademicProgram", Err.Number, Err.Description)
     End Function
 
     Public Function AddProgramMajors(ByVal newMajor As tProgramMajors) As TranDBResult
@@ -486,7 +490,7 @@ ReleaseAndExit:
         Dim com As New MySqlCommand("SELECT * From tblPrograms WHERE (((tblPrograms.ProgID)='" & sProgramID & "'));", clsCon.con)
         Dim vRS As MySqlDataReader = com.ExecuteReader()
         vRS.Read()
-        If vRS.HasRows = True Then
+        If vRS.HasRows Then
             ProgramExistByID = TranDBResult.Success
         Else
             ProgramExistByID = TranDBResult.Failed
@@ -658,7 +662,7 @@ ReleaseAndExit:
         Dim com As New MySqlCommand("SELECT * From tblDisciplineMajors WHERE (((tblDisciplineMajors.ProgID)='" & sProgID & "'));", clsCon.con)
         Dim vRS As MySqlDataReader = com.ExecuteReader()
         vRS.Read()
-        If vRS.HasRows = True Then
+        If vRS.HasRows Then
             vMajor.MajorID = vRS("ID").ToString()
             vMajor.MajorDiscCode = vRS("MajorDiscCode").ToString()
             vMajor.MajorDescription = vRS("MajorDescription").ToString()
@@ -676,7 +680,7 @@ ReleaseAndExit:
         Dim com As New MySqlCommand("SELECT * From tblDisciplineMajorGroups WHERE (((tblDisciplineMajorGroups.MajorGroupCode)='" & sMajorCode & "'));", clsCon.con)
         Dim vRS As MySqlDataReader = com.ExecuteReader()
         vRS.Read()
-        If vRS.HasRows = True Then
+        If vRS.HasRows Then
             MajorGroupExistByCode = TranDBResult.Success
         Else
             MajorGroupExistByCode = TranDBResult.Failed
@@ -689,7 +693,7 @@ ReleaseAndExit:
         Dim com As New MySqlCommand("SELECT * From tblDisciplineMajorGroups WHERE (((tblDisciplineMajorGroups.ID)='" & sMajorID & "'));", clsCon.con)
         Dim vRS As MySqlDataReader = com.ExecuteReader()
         vRS.Read()
-        If vRS.HasRows = True Then
+        If vRS.HasRows Then
             MajorGroupExistByID = TranDBResult.Success
         Else
             MajorGroupExistByID = TranDBResult.Failed
@@ -702,7 +706,7 @@ ReleaseAndExit:
         Dim com As New MySqlCommand("SELECT * From tblProgramMajors WHERE (((tblProgramMajors.ID)='" & sProgramID & "'));", clsCon.con)
         Dim vRS As MySqlDataReader = com.ExecuteReader()
         vRS.Read()
-        If vRS.HasRows = True Then
+        If vRS.HasRows Then
             MajorProgramExistByID = TranDBResult.Success
         Else
             MajorProgramExistByID = TranDBResult.Failed
@@ -795,6 +799,7 @@ ReleaseAndExit:
 
 
     End Function
+
     Public Function GetNewMajorGroupID(ByRef sNewProgramID As String) As TranDBResult
         Dim sSQL As String
         Dim NewDNumber As Integer
@@ -845,4 +850,17 @@ ReleaseAndExit:
             sNewProgramID = Left("0", 7) & NewDNumber
         End While
     End Function
+
+    Public Function AcademicProgramMajorsExistByID(ByVal ProgID As String, ByVal MajorDiscID As String) As TranDBResult
+        Dim com As New MySqlCommand("SELECT * FROM tblprogrammajors WHERE ProgID='" & ProgID & "' AND MajorDiscID='" & MajorDiscID & "'", con)
+        Dim vRS As MySqlDataReader = com.ExecuteReader()
+        vRS.Read()
+        If vRS.HasRows Then
+            AcademicProgramMajorsExistByID = TranDBResult.Success
+        Else
+            AcademicProgramMajorsExistByID = TranDBResult.Failed
+        End If
+        vRS.Close()
+    End Function
+
 End Module

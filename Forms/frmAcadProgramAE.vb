@@ -3,10 +3,11 @@
 Imports MySql.Data.MySqlClient
 Imports System.Windows.Forms
 Imports System.Data
+Imports System.Diagnostics
 
 Public Class frmAcadProgramAE
 
-    Public ProgramAlias As String = ""
+    Public ProgramAlias As String
 
     Dim ProgramID As String
     Dim State As FormState
@@ -14,6 +15,8 @@ Public Class frmAcadProgramAE
 
 #Region "ShowForm"
     Public Sub ShowForm()
+
+        cboCampus.SelectedIndex = (ReadINI("Campus", "Campus", CONFIG_INI_FILE) - 1)
 
         GetNewProgramID(ProgramID)
 
@@ -69,6 +72,7 @@ Public Class frmAcadProgramAE
             txtShortName.Text = vProg.ShortName
             txtWeight.Text = vProg.Weight
 
+            ProgramID = vProg.ProgID
             ProgramAlias = vProg.Alias1
 
             If GetCampusByCampusID(vProg.CampusID, Camp) = TranDBResult.Success Then
@@ -340,8 +344,8 @@ Public Class frmAcadProgramAE
 
                 For i As Integer = 0 To dgMajor.RowCount - 1
                     If BooleanToInt(dgMajor.Item(2, i).Value.ToString()) = 1 Then
-                        Dim com As New MySqlCommand("INSERT INTO tblProgramMajors(ProgID,MajorDiscID,Active) VALUES('" & vProg.ProgID & "','" & _
-                                  dgMajor.Item(4, i).Value.ToString() & "','0')", clsCon.con)
+                        Dim com As New MySqlCommand("INSERT INTO tblProgramMajors(ProgID,MajorDiscID,InActive) VALUES('" & vProg.ProgID & "','" & _
+                                  dgMajor.Item(4, i).Value.ToString() & "','" & BooleanToInt(dgMajor.Item(3, i).Value.ToString()) & "')", clsCon.con)
                         com.ExecuteNonQuery()
                     End If
                 Next
@@ -369,7 +373,6 @@ Public Class frmAcadProgramAE
         Dim vMajor As tProgramMajors
 
         SaveProgramMajors = True
-
 
         For i As Integer = 0 To dgMajor.RowCount - 1
             If CBool(dgMajor.Item(2, i).Value.ToString()) = True Then
@@ -400,8 +403,10 @@ Public Class frmAcadProgramAE
     Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
         Select Case State
             Case FormState.updateFormState
+                Debug.Print("FormState.updateFormState")
                 UpdateData()
             Case FormState.addFormState
+                Debug.Print("FormState.addFormState")
                 SaveData()
         End Select
     End Sub
@@ -433,13 +438,12 @@ Public Class frmAcadProgramAE
 
         If Val(txtMaxResidency.Text) < 1 Then MsgBox("Please enter Maximum residency") : Exit Function
 
-
         vProg.ProgID = ProgramID
         vProg.ProgramCode = txtProgramCode.Text
         vProg.ProgramName = txtProgramName.Text
         vProg.ShortName = txtShortName.Text
-        vProg.CampusID = cboCampus.SelectedItem.Col2
-        vProg.CollegeID = cboCollege.SelectedItem.Col2
+        vProg.CampusID = cboCampusID.Text
+        vProg.CollegeID = cboCollegeID.Text
         vProg.Alias1 = ProgramAlias
         vProg.ProgramYears = (txtNoYears.Text)
         vProg.MaxResidency = (txtMaxResidency.Text)
@@ -454,26 +458,44 @@ Public Class frmAcadProgramAE
         vProg.TotalNonLecUnits = (txtNonLecUnits.Text)
         vProg.Weight = (txtWeight.Text)
         vProg.ProgParent = (cboParentID.Text)
-        vProg.Classification = (cboClassification.SelectedItem.Col2)
+        vProg.Classification = (cboClassificationID.Text)
         vProg.ThesisReqID = (cboThesisID.Text)
-        vProg.ProgStatus = cboStatus.SelectedItem.Col2
+        vProg.ProgStatus = cboStatusID.Text
         vProg.MajorDiscGroupCode = cboDisciplineID.Text
         vProg.ProgDiscipline = cboDisciplineID.Text
-        vProg.Semestral = "1"
-        vProg.ProgramSemester = cboTerm.SelectedItem.Col3 * Val(txtNoYears.Text)
+        vProg.ProgramSemester = cboTermID.Text * Val(txtNoYears.Text)
+
+        Select Case (vProg.ProgramSemester / vProg.ProgramYears)
+            Case 2
+              vProg.Semestral = "1"
+            Case 3
+                vProg.Semestral = "0"
+            Case 1
+                vProg.Semestral = "0"
+        End Select
 
         Select Case EditAcademicProgram(vProg)
 
             Case TranDBResult.Success
+                For i As Integer = 0 To dgMajor.RowCount - 1
+                    If CBool(dgMajor.Item(2, i).Value.ToString()) Then
+                        If AcademicProgramMajorsExistByID(vProg.ProgID, dgMajor.Item(4, i).Value.ToString()) <> TranDBResult.Success Then
+                            Dim com As New MySqlCommand("INSERT INTO tblProgramMajors(ProgID,MajorDiscID,InActive) VALUES('" & vProg.ProgID & "','" & _
+                                 dgMajor.Item(4, i).Value.ToString() & "','" & BooleanToInt(dgMajor.Item(3, i).Value.ToString()) & "')", clsCon.con)
+                            com.ExecuteNonQuery()
 
-                'For Each lv As ListViewItem In lvMajor.Items
-                '    If lv.Checked = True Then
-
-                '        Dim com As New MySqlCommand("INSERT INTO tblProgramMajors VALUES('" & vProg.ProgID & "','" & _
-                '                  lv.SubItems(1).Text & "','0')", clsCon.con)
-                '        com.ExecuteNonQuery()
-                '    End If
-                'Next
+                        Else
+                            Dim com1 As New MySqlCommand("UPDATE tblProgramMajors Set InActive ='" & BooleanToInt(dgMajor.Item(3, i).Value.ToString()) & _
+                                                         "' WHERE ProgID='" & vProg.ProgID & "' AND MajorDiscID='" & dgMajor.Item(4, i).Value.ToString() & "'", clsCon.con)
+                            com1.ExecuteNonQuery()
+                        End If
+                    Else
+                        If AcademicProgramMajorsExistByID(vProg.ProgID, dgMajor.Item(4, i).Value.ToString()) = TranDBResult.Success Then
+                            Dim com As New MySqlCommand("DELETE FROM tblProgramMajors WHERE ProgID='" & vProg.ProgID & "' AND MajorDiscID='" & dgMajor.Item(4, i).Value.ToString() & "'", clsCon.con)
+                            com.ExecuteNonQuery()
+                        End If
+                    End If
+                Next
 
                 MsgBox("Record successfully saved", vbInformation)
                 UpdateData = True

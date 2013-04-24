@@ -59,7 +59,7 @@ Public Class frmCollegeAE
         fillCombo(cboCampus, "SELECT ShortName FROM tblCampus")
         fillCombo(cboCampusID, "SELECT CampusID FROM tblCampus")
         'fillMultiColumnCombo2(cboCampusID, "SELECT ShortName,CampusID FROM tblCampus")
-        'cboCampus.SelectedIndex = ReadINI("Campus", "Campus", CONFIG_INI_FILE)
+        cboCampus.SelectedIndex = (ReadINI("Campus", "Campus", CONFIG_INI_FILE) - 1)
     End Sub
 
     Private Sub cmdCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancel.Click

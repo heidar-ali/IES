@@ -325,7 +325,6 @@ Partial Class frmProgramsMajors
         Me.lvMajors.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lvMajors.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvMajors.FullRowSelect = True
-        Me.lvMajors.GridLines = True
         Me.lvMajors.Location = New System.Drawing.Point(3, 3)
         Me.lvMajors.Name = "lvMajors"
         Me.lvMajors.Size = New System.Drawing.Size(559, 460)

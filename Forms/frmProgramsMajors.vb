@@ -38,6 +38,9 @@ Public Class frmProgramsMajors
 
         FillMajorDiscipline()
 
+        cboCampus.SelectedIndex = (ReadINI("Campus", "Campus", CONFIG_INI_FILE) - 1)
+
+
     End Sub
 
 #Region "FillVSFlexGrid"
@@ -202,7 +205,7 @@ Public Class frmProgramsMajors
 
 #Region "GetProgramMajors"
     Private Sub GetProgramMajors(ByVal ProgID As String)
-        Dim com As New MySqlCommand("SELECT fnMajorCode(MajorDiscID),MajorDiscID,fnMajorName(MajorDiscID) FROM tblProgramMajors WHERE ProgID='" & ProgID & "'", con)
+        Dim com As New MySqlCommand("SELECT fnMajorCode(MajorDiscID),MajorDiscID,fnMajorName(MajorDiscID) FROM tblProgramMajors WHERE ProgID='" & ProgID & "' AND MajorDiscID IS NOT NULL", con)
         Dim vRS As MySqlDataReader = com.ExecuteReader
         lvMajors.Items.Clear()
         While vRS.Read
@@ -271,16 +274,17 @@ Public Class frmProgramsMajors
         End If
     End Sub
 
-    Private Sub cmdDeleteMajor_Click(sender As System.Object, e As System.EventArgs) Handles cmdDeleteMajor.Click, ToolStripButton2.Click
+    Private Sub cmdDeleteMajor_Click(sender As System.Object, e As System.EventArgs) Handles cmdDeleteMajor.Click
         On Error GoTo err
         If lvMajorGroups.Items.Count > 0 Then
             If Len(lvMajorGroups.FocusedItem.SubItems(2).Text) > 0 Then
 
-                Dim com As New MySqlCommand("DELETE FROM tbldisciplinemajorsgroups WHERE ID='" & lvMajorGroups.FocusedItem.SubItems(2).Text & "'", con)
-                com.ExecuteNonQuery()
+                'Dim com As New MySqlCommand("DELETE FROM tbldisciplinemajorsgroups WHERE ID='" & lvMajorGroups.FocusedItem.SubItems(2).Text & "'", con)
+                'com.ExecuteNonQuery()
 
+                MsgBox("Sorry, you are not allowed to delete this record", vbExclamation)
                 FillListView("SELECT MajorGroupCode,Description,ID FROM tblDisciplineMajorGroups ORDER BY ID", lvMajorGroups, True, 0)
-
+                Exit Sub
             End If
         End If
 
@@ -293,16 +297,21 @@ err:
 
     End Sub
 
-    Private Sub cmdDeleteMajorDisc_Click(sender As System.Object, e As System.EventArgs) Handles cmdDeleteMajorDisc.Click
+    Private Sub cmdDeleteMajorDisc_Click(sender As System.Object, e As System.EventArgs) Handles cmdDeleteMajorDisc.Click, ToolStripButton2.Click
         On Error GoTo err
 
         If fgMajor.Rows.Count > 0 Then
             If Len(fgMajor.GetDataDisplay(fgMajor.RowSel, 3)) > 0 Then
 
-                Dim com As New MySqlCommand("DELETE FROM tbldisciplinemajors WHERE ID='" & fgMajor.GetDataDisplay(fgMajor.RowSel, 3) & "'", con)
-                com.ExecuteNonQuery()
+                If MsgBox("Are you sure you want to delete the Major Discipline: " & fgMajor.GetDataDisplay(fgMajor.RowSel, 1) & _
+                          "-" & fgMajor.GetDataDisplay(fgMajor.RowSel, 2), vbExclamation + vbYesNo, "Delete Major Discipline") = vbYes Then
 
-                FillMajorDiscipline()
+                    Dim com As New MySqlCommand("DELETE FROM tbldisciplinemajors WHERE ID='" & fgMajor.GetDataDisplay(fgMajor.RowSel, 3) & "'", con)
+                    com.ExecuteNonQuery()
+
+                    FillMajorDiscipline()
+
+                End If
 
             End If
         End If
