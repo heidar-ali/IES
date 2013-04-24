@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTables" targetNamespace="http://tempuri.org/dsTables.xsd" xmlns:mstns="http://tempuri.org/dsTables.xsd" xmlns="http://tempuri.org/dsTables.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="iceConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="iceConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Academic_Manager.Settings.GlobalReference.Default.iceConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblsubjectTableAdapter" GeneratorDataComponentClassName="tblsubjectTableAdapter" Name="tblsubject" UserDataComponentName="tblsubjectTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="iceConnectionString (Settings)" DbObjectName="ice.tblsubject" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT SubjectCode,Description,LabUnits,Units,CreditUnits,LecHrs,LabHrs,IsSubjectGE,IsSubjectElective,IsMajorSubject,IsCompSubject,InclGWA,IsNonAcademic,AliasCode1,AliasCode2, 
+fnProgramClassName(LevelID),MinSize,MaxSize,IsOtherSchool,InActive,CreatedBy,CreationDate FROM tblSubject</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SubjectCode" DataSetColumn="SubjectCode" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="LabUnits" DataSetColumn="LabUnits" />
+              <Mapping SourceColumn="Units" DataSetColumn="Units" />
+              <Mapping SourceColumn="CreditUnits" DataSetColumn="CreditUnits" />
+              <Mapping SourceColumn="LecHrs" DataSetColumn="LecHrs" />
+              <Mapping SourceColumn="LabHrs" DataSetColumn="LabHrs" />
+              <Mapping SourceColumn="IsSubjectGE" DataSetColumn="IsSubjectGE" />
+              <Mapping SourceColumn="IsSubjectElective" DataSetColumn="IsSubjectElective" />
+              <Mapping SourceColumn="IsMajorSubject" DataSetColumn="IsMajorSubject" />
+              <Mapping SourceColumn="IsCompSubject" DataSetColumn="IsCompSubject" />
+              <Mapping SourceColumn="InclGWA" DataSetColumn="InclGWA" />
+              <Mapping SourceColumn="IsNonAcademic" DataSetColumn="IsNonAcademic" />
+              <Mapping SourceColumn="AliasCode1" DataSetColumn="AliasCode1" />
+              <Mapping SourceColumn="AliasCode2" DataSetColumn="AliasCode2" />
+              <Mapping SourceColumn="fnProgramClassName(LevelID)" DataSetColumn="fnProgramClassName(LevelID)" />
+              <Mapping SourceColumn="MinSize" DataSetColumn="MinSize" />
+              <Mapping SourceColumn="MaxSize" DataSetColumn="MaxSize" />
+              <Mapping SourceColumn="IsOtherSchool" DataSetColumn="IsOtherSchool" />
+              <Mapping SourceColumn="InActive" DataSetColumn="InActive" />
+              <Mapping SourceColumn="CreatedBy" DataSetColumn="CreatedBy" />
+              <Mapping SourceColumn="CreationDate" DataSetColumn="CreationDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTables" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsTables" msprop:Generator_UserDSName="dsTables">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblsubject" msprop:Generator_TableClassName="tblsubjectDataTable" msprop:Generator_TableVarName="tabletblsubject" msprop:Generator_TablePropName="tblsubject" msprop:Generator_RowDeletingName="tblsubjectRowDeleting" msprop:Generator_UserTableName="tblsubject" msprop:Generator_RowChangingName="tblsubjectRowChanging" msprop:Generator_RowEvHandlerName="tblsubjectRowChangeEventHandler" msprop:Generator_RowDeletedName="tblsubjectRowDeleted" msprop:Generator_RowEvArgName="tblsubjectRowChangeEvent" msprop:Generator_RowChangedName="tblsubjectRowChanged" msprop:Generator_RowClassName="tblsubjectRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SubjectCode" msprop:Generator_ColumnVarNameInTable="columnSubjectCode" msprop:Generator_ColumnPropNameInRow="SubjectCode" msprop:Generator_ColumnPropNameInTable="SubjectCodeColumn" msprop:Generator_UserColumnName="SubjectCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21845" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LabUnits" msprop:Generator_ColumnVarNameInTable="columnLabUnits" msprop:Generator_ColumnPropNameInRow="LabUnits" msprop:Generator_ColumnPropNameInTable="LabUnitsColumn" msprop:Generator_UserColumnName="LabUnits" type="xs:float" minOccurs="0" />
+              <xs:element name="Units" msprop:Generator_ColumnVarNameInTable="columnUnits" msprop:Generator_ColumnPropNameInRow="Units" msprop:Generator_ColumnPropNameInTable="UnitsColumn" msprop:Generator_UserColumnName="Units" type="xs:float" minOccurs="0" />
+              <xs:element name="CreditUnits" msprop:Generator_ColumnVarNameInTable="columnCreditUnits" msprop:Generator_ColumnPropNameInRow="CreditUnits" msprop:Generator_ColumnPropNameInTable="CreditUnitsColumn" msprop:Generator_UserColumnName="CreditUnits" type="xs:float" minOccurs="0" />
+              <xs:element name="LecHrs" msprop:Generator_ColumnVarNameInTable="columnLecHrs" msprop:Generator_ColumnPropNameInRow="LecHrs" msprop:Generator_ColumnPropNameInTable="LecHrsColumn" msprop:Generator_UserColumnName="LecHrs" type="xs:float" minOccurs="0" />
+              <xs:element name="LabHrs" msprop:Generator_ColumnVarNameInTable="columnLabHrs" msprop:Generator_ColumnPropNameInRow="LabHrs" msprop:Generator_ColumnPropNameInTable="LabHrsColumn" msprop:Generator_UserColumnName="LabHrs" type="xs:float" minOccurs="0" />
+              <xs:element name="IsSubjectGE" msprop:Generator_ColumnVarNameInTable="columnIsSubjectGE" msprop:Generator_ColumnPropNameInRow="IsSubjectGE" msprop:Generator_ColumnPropNameInTable="IsSubjectGEColumn" msprop:Generator_UserColumnName="IsSubjectGE" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="IsSubjectElective" msprop:Generator_ColumnVarNameInTable="columnIsSubjectElective" msprop:Generator_ColumnPropNameInRow="IsSubjectElective" msprop:Generator_ColumnPropNameInTable="IsSubjectElectiveColumn" msprop:Generator_UserColumnName="IsSubjectElective" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="IsMajorSubject" msprop:Generator_ColumnVarNameInTable="columnIsMajorSubject" msprop:Generator_ColumnPropNameInRow="IsMajorSubject" msprop:Generator_ColumnPropNameInTable="IsMajorSubjectColumn" msprop:Generator_UserColumnName="IsMajorSubject" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="IsCompSubject" msprop:Generator_ColumnVarNameInTable="columnIsCompSubject" msprop:Generator_ColumnPropNameInRow="IsCompSubject" msprop:Generator_ColumnPropNameInTable="IsCompSubjectColumn" msprop:Generator_UserColumnName="IsCompSubject" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="InclGWA" msprop:Generator_ColumnVarNameInTable="columnInclGWA" msprop:Generator_ColumnPropNameInRow="InclGWA" msprop:Generator_ColumnPropNameInTable="InclGWAColumn" msprop:Generator_UserColumnName="InclGWA" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="IsNonAcademic" msprop:Generator_ColumnVarNameInTable="columnIsNonAcademic" msprop:Generator_ColumnPropNameInRow="IsNonAcademic" msprop:Generator_ColumnPropNameInTable="IsNonAcademicColumn" msprop:Generator_UserColumnName="IsNonAcademic" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="AliasCode1" msprop:Generator_ColumnVarNameInTable="columnAliasCode1" msprop:Generator_ColumnPropNameInRow="AliasCode1" msprop:Generator_ColumnPropNameInTable="AliasCode1Column" msprop:Generator_UserColumnName="AliasCode1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AliasCode2" msprop:Generator_ColumnVarNameInTable="columnAliasCode2" msprop:Generator_ColumnPropNameInRow="AliasCode2" msprop:Generator_ColumnPropNameInTable="AliasCode2Column" msprop:Generator_UserColumnName="AliasCode2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fnProgramClassName_x0028_LevelID_x0029_" msprop:Generator_ColumnVarNameInTable="_columnfnProgramClassName_LevelID_" msprop:Generator_ColumnPropNameInRow="_fnProgramClassName_LevelID_" msprop:Generator_ColumnPropNameInTable="_fnProgramClassName_LevelID_Column" msprop:Generator_UserColumnName="fnProgramClassName(LevelID)" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MinSize" msprop:Generator_ColumnVarNameInTable="columnMinSize" msprop:Generator_ColumnPropNameInRow="MinSize" msprop:Generator_ColumnPropNameInTable="MinSizeColumn" msprop:Generator_UserColumnName="MinSize" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="MaxSize" msprop:Generator_ColumnVarNameInTable="columnMaxSize" msprop:Generator_ColumnPropNameInRow="MaxSize" msprop:Generator_ColumnPropNameInTable="MaxSizeColumn" msprop:Generator_UserColumnName="MaxSize" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="IsOtherSchool" msprop:Generator_ColumnVarNameInTable="columnIsOtherSchool" msprop:Generator_ColumnPropNameInRow="IsOtherSchool" msprop:Generator_ColumnPropNameInTable="IsOtherSchoolColumn" msprop:Generator_UserColumnName="IsOtherSchool" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="InActive" msprop:Generator_ColumnVarNameInTable="columnInActive" msprop:Generator_ColumnPropNameInRow="InActive" msprop:Generator_ColumnPropNameInTable="InActiveColumn" msprop:Generator_UserColumnName="InActive" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreationDate" msprop:Generator_ColumnVarNameInTable="columnCreationDate" msprop:Generator_ColumnPropNameInRow="CreationDate" msprop:Generator_ColumnPropNameInTable="CreationDateColumn" msprop:Generator_UserColumnName="CreationDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbldisciplinemajors" msprop:Generator_TableClassName="tbldisciplinemajorsDataTable" msprop:Generator_TableVarName="tabletbldisciplinemajors" msprop:Generator_TablePropName="tbldisciplinemajors" msprop:Generator_RowDeletingName="tbldisciplinemajorsRowDeleting" msprop:Generator_UserTableName="tbldisciplinemajors" msprop:Generator_RowChangingName="tbldisciplinemajorsRowChanging" msprop:Generator_RowEvHandlerName="tbldisciplinemajorsRowChangeEventHandler" msprop:Generator_RowDeletedName="tbldisciplinemajorsRowDeleted" msprop:Generator_RowEvArgName="tbldisciplinemajorsRowChangeEvent" msprop:Generator_RowChangedName="tbldisciplinemajorsRowChanged" msprop:Generator_RowClassName="tbldisciplinemajorsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAJOR_x0020_GROUP" msprop:Generator_ColumnVarNameInTable="columnMAJOR_GROUP" msprop:Generator_ColumnPropNameInRow="MAJOR_GROUP" msprop:Generator_ColumnPropNameInTable="MAJOR_GROUPColumn" msprop:Generator_UserColumnName="MAJOR GROUP" type="xs:string" minOccurs="0" />
+              <xs:element name="MAJOR_x0020_CODE" msprop:Generator_ColumnVarNameInTable="columnMAJOR_CODE" msprop:Generator_ColumnPropNameInRow="MAJOR_CODE" msprop:Generator_ColumnPropNameInTable="MAJOR_CODEColumn" msprop:Generator_UserColumnName="MAJOR CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="MAJOR_x0020_DISCIPLINE" msprop:Generator_ColumnVarNameInTable="columnMAJOR_DISCIPLINE" msprop:Generator_ColumnPropNameInRow="MAJOR_DISCIPLINE" msprop:Generator_ColumnPropNameInTable="MAJOR_DISCIPLINEColumn" msprop:Generator_UserColumnName="MAJOR DISCIPLINE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
