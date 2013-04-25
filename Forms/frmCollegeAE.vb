@@ -259,4 +259,9 @@ Public Class frmCollegeAE
             ShowEdit(dgCollege.Item(6, dgCollege.CurrentRow.Index).Value.ToString())
         End If
     End Sub
+
+    Private Sub ToolStripButtonPrint_Click(sender As System.Object, e As System.EventArgs) Handles ToolStripButtonPrint.Click
+        Dim frm As New frmPrintPreview()
+        frm.rptAcademiProgramByCampus(cboCampusID.Text, CurrentUser.UserID)
+    End Sub
 End Class

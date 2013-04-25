@@ -13,6 +13,9 @@ Public Class frmCurriculum
     Dim ProgramID As String
     Dim xCurriculumID As String
 
+    Dim AcademicProgram, ProgramCurriculum As String
+
+
     Public Sub Form_Refresh()
         LoadSubjects()
     End Sub
@@ -48,7 +51,7 @@ Public Class frmCurriculum
              "FROM tblTeacher AS T " & _
              "INNER JOIN tblEmployees AS E ON T.EmployeeID = E.EmployeeID;", lvFaculty, True, 3)
 
-
+        cboCampus.SelectedIndex = (ReadINI("Campus", "Campus", CONFIG_INI_FILE) - 1)
     End Sub
 
     Private Sub ClassSectionGrid()
@@ -126,7 +129,7 @@ Public Class frmCurriculum
         While vRS.Read()
             Dim lv As New ListViewItem(vRS("CurriculumCode").ToString())
             lv.SubItems.Add(vRS("CurriculumID").ToString())
-            lv.SubItems.Add(vRS("Desc"))
+            lv.SubItems.Add(vRS("Desc").ToString())
             lv.ImageIndex = 0
             lsvCurriculum.Items.AddRange(New ListViewItem() {lv})
         End While
@@ -146,23 +149,36 @@ Public Class frmCurriculum
     End Sub
 
 
-    Private Sub cmdNewCur_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdNewCur.Click
+    Private Sub cmdNewCur_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdNewCur.Click, ToolStripNew.Click
+        On Error GoTo err
         Dim frm As New frmAddCurriculum()
         frm.ShowForm(cboCampus.Text, cboCampusID.Text, listRecord.FocusedItem.SubItems(2).Text, listRecord.FocusedItem.SubItems(1).Text)
+        Exit Sub
+err:
+        DisplayErrorMsg("frmCurriculum", "cmdNewCur_Click", Err.Number, Err.Description)
     End Sub
 
     Private Sub cmdEditCur_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdEditCur.Click
+        On Error Resume Next
         If lsvCurriculum.Items.Count > 0 Then
-            Dim frm As New frmAddCurriculum()
-            frm.ShowEdit(lsvCurriculum.FocusedItem.SubItems(1).Text)
+            If Len(lsvCurriculum.FocusedItem.SubItems(1).Text) > 0 Then
+                Dim frm As New frmAddCurriculum()
+                frm.ShowEdit(lsvCurriculum.FocusedItem.SubItems(1).Text, cboCampusID.Text)
+            End If
         End If
     End Sub
 
-    Private Sub cmdCoursOutLine_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CourseOutlineToolStripMenuItem.Click
+    Private Sub cmdCoursOutLine_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CourseOutlineToolStripMenuItem.Click, cmdCourse_Outline.Click
+        On Error GoTo err
         If lsvCurriculum.Items.Count > 0 Then
-            Dim frm As New frmCourseOutline()
-            frm.ShowForm(lsvCurriculum.FocusedItem.SubItems(2).Text, lsvCurriculum.FocusedItem.SubItems(1).Text)
+            If Len(lsvCurriculum.FocusedItem.SubItems(1).Text) > 0 Then
+                Dim frm As New frmCourseOutline()
+                frm.ShowForm(lsvCurriculum.FocusedItem.SubItems(2).Text, lsvCurriculum.FocusedItem.SubItems(1).Text)
+            End If
         End If
+        Exit Sub
+err:
+        DisplayErrorMsg("frmCurriculum", "cmdNewCur_Click", Err.Number, Err.Description)
     End Sub
 
     Private Sub mnuRefreshSubject_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuRefreshSubject.Click
@@ -282,15 +298,20 @@ Public Class frmCurriculum
     End Function
 
 
-    Private Sub lsvCurriculum_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lsvCurriculum.SelectedIndexChanged, lsvCurriculum.Click
+    Private Sub lsvCurriculum_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lsvCurriculum.Click
         If lsvCurriculum.Items.Count > 0 Then
-            FillList(lsvCurriculum.FocusedItem.SubItems(1).Text)
-            TabPage4.Text = lsvCurriculum.FocusedItem.Text
-            xCurriculumID = lsvCurriculum.FocusedItem.SubItems(1).Text
+            If Len(lsvCurriculum.FocusedItem.SubItems(1).Text) > 0 Then
+                FillList(lsvCurriculum.FocusedItem.SubItems(1).Text)
+
+                ProgramCurriculum = lsvCurriculum.FocusedItem.Text
+                TabPage4.Text = AcademicProgram & " - " & ProgramCurriculum
+
+                xCurriculumID = lsvCurriculum.FocusedItem.SubItems(1).Text
+            End If
         End If
     End Sub
 
-    Private Sub cmdRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRefresh.Click
+    Private Sub cmdRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRefresh.Click, ToolStripRefresh.Click
         FillListView("SELECT tblCurriculum.CurriculumCode,tblCurriculum.CurriculumID,tblCurriculum.Description " & _
             "FROM tblCurriculum  INNER JOIN tblPrograms ON tblPrograms.ProgID=tblCurriculum.ProgramID WHERE tblPrograms.ProgID='" & ProgramID & "'", lsvCurriculum, True, 15)
     End Sub
@@ -579,7 +600,7 @@ Public Class frmCurriculum
         End If
     End Sub
 
-    Private Sub lvCurriculum_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles lvCurriculum.SelectedIndexChanged
+    Private Sub lvCurriculum_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles lvCurriculum.SelectedIndexChanged, lsvCurriculum.SelectedIndexChanged
         If lvCurriculum.Items.Count > 0 Then
             FilterSubjectsByCurriculum(lvCurriculum.FocusedItem.SubItems(1).Text)
         End If
@@ -621,5 +642,11 @@ Public Class frmCurriculum
 
     Private Sub dgView_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgView.CellContentClick
 
+    End Sub
+
+    Private Sub listRecord_Click(sender As System.Object, e As System.EventArgs) Handles listRecord.Click
+        AcademicProgram = listRecord.FocusedItem.SubItems(2).Text
+        TabPage4.Text = AcademicProgram & " - " & ProgramCurriculum
+        ProgramID = listRecord.FocusedItem.SubItems(1).Text
     End Sub
 End Class

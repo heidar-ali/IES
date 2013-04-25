@@ -118,37 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cmdSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFhSURBVDhPYwCBkPAD/8nFcANWbXj939Fjx39c4Mu33/9f
+        vv32/97jD2B1OQU7/ktrBRFnALLmK3cg6oDaiDMAXfOpq8/A6irrjxA2AJvmg+cegdUR9AIuzTuO3QOr
+        S8nYiNsAfJrX778JVhcVtwq7Ae8//fj/+OXn/zcfvPt//ubL/8cuPv2/59SD/1sO3fm/evcNMAapCwxd
+        iGkAzBBCGKTZw2cmpgFLVz//P2fhg/8Tp1//39F3/n998/H/pVUHwAEG8jPI2b4B8/67uE/7b2Pfh2oA
+        Ns0FpXv+Z+Rs/R+XsvZ/WNQyFM0mZu2oBkybc+t/z6TL//UdwvBimGYdvXpUA0CamztOgxUBhf7zCiuA
+        Y+Tl2y/gmAAFnk90MVyzhnY1qgEgzaDUBTKAm1/qv66ZC9gAGAAZAjIAphnDAJBmkJ9BBkybt/7/0lVb
+        gAG7GwWDDIBpRjEABEAc0nHQfwC/X4PrQNLFUgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="Cancel_Button.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADrSURBVDhPY6AKeChg9v+hju9/KJd08EDW8f99Bs3/hzXd
+        yDfkjLgl2JBtblE4DXnuEA9WA+ViAnyGgDXzmf7vScrC78qzElYYhjySd/5/V8OLsGYYABlyg10PbMgD
+        frP/12wjidcMAzc59MEuOaLtTrrmV/GVYM3X2XT+X2PVJs2A1wlVYM2HzQP/xwUE/z8uZAw2CF/swAFc
+        s0XQ/5SUFLgG5DCBCmECmLMvydj+j4+Px1CI1xCY5ttcBv+z/IL/p6amYrUJlFJB6jAMgRmwTMMep2YY
+        2BSQBHYJlIsAeXl5/0EYyqUXYGAAANeEpHDEgq6YAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="cmdGetProgram.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABkklEQVQ4T62TzUsCURTF/edaRbsW7SKC
-        IKhFtmgT5KKIRkiMIMI0Ah1CjERh9C1q4aICCxGsNLOyTBpqmIoGoohb58obHGakFgkH33yc3733vHk+
-        33//UqkU/UU968L88fnVU/K5pmnkCdnJaJQ/Oqe4KFK6ULZlvFoMBcCyLBbWLsjeyQW9WO8EQ+myzcK9
-        leQ+GYbhGC+fyzkBeLHeemJArfVIxeotA7BGN8sJwZWDwSDLNYYEwHRWv6FG26CmbrIAmw4n7fbRjSeg
-        cv1Ah6dN7kQ339ggOxpb2OJr89nkcVwAhCfnBkAGh/Bwf2hmlQEwyzwcIQKAWTEz2u4GhFVBg/6QXd0F
-        yB5UOOkJJU7ruwVOHuMgC4Q3MKnQcblqVwdAVROdXUDVuUiGzSOBDX4Z82I9PLvmadZ1vQNAZWlGyv3j
-        i4R2G817ql3ddXbjZy3nxj/MNmA+kubtmQptU99ogPxLMXurZOIydQlxANA2BDNgGEkIQfjKsE1Q9+FC
-        21A0GmP5YEa6ymbW+3D8cty/ARqpc4Oy1dbyAAAAAElFTkSuQmCC
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABhklEQVQ4T62SQUsCURSF/XOtol2LdhFB
+        ENQiW7QJclFECokRRJhGoEOIkSiMzqIWLiqwEMFKMyvLpKGGqWggirh17vge2kzgogcH3sy88917zxvP
+        v69kMkm9qH3cufDx4/PrT4nvqqq6Q3bSKuWOzimmFSiVL0kZr5YEWJbFcu1k7+SCXqx3NhQvWyy8W0ns
+        k2EYcgQol812A3Cw1nxiQLX5SIXKLQOwRxfLcY0rBwIBlmMMAYDprHZD9ZZBDd1kATYdSsj20Y0roHz9
+        QIenDQbp5hsfFh2NLWzxs/lsugMQnpgbABEchHdDM6uyusijbbUXAJgV1dB2JyCkaDToDcrqDkDmoMxJ
+        T/hjtL6b5+QxDrJAeAOTfjouVaQZUpS4DUDVuXCazSO+DT6MebEfnl1zNeu6bgNQWZiRcv/4Irdbb9xT
+        9erOvo2f/W+zBMyHU2ycCm5T36iPvEtReVUi8c65HQBUhmAGDCNpmsZ/Ga4J6vz7YIIikSiLAUjXv5np
+        vpKelsfzDRqpc4OsMNHqAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="LineShape2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 139, 423, 0</value>
-  </metadata>
-  <metadata name="LineShape2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 139</value>
-  </metadata>
-  <metadata name="LineShape2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>423, 0</value>
-  </metadata>
-  <metadata name="LineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>20, 104, 423, 0</value>
-  </metadata>
-  <metadata name="LineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>20, 104</value>
-  </metadata>
-  <metadata name="LineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>423, 0</value>
-  </metadata>
   <assembly alias="MTGCCombobox" name="MTGCCombobox, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null" />
   <data name="cboCampus.BindedControl" type="MTGCComboBox+ControlloAssociato, MTGCCombobox">
     <value>False; ; </value>

@@ -23,7 +23,7 @@ Partial Class frmCurriculum
 	''' </summary>
 	Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCurriculum))
         Me.timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.tabControl1 = New System.Windows.Forms.TabControl()
@@ -120,6 +120,10 @@ Partial Class frmCurriculum
         Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader21 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ToolStrip4 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator()
         Me.TabControl3 = New System.Windows.Forms.TabControl()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.lsvCurriculum = New System.Windows.Forms.ListView()
@@ -136,6 +140,11 @@ Partial Class frmCurriculum
         Me.CourseOutlineToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.cmdPrintCurriculumDetails = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStrip3 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripNew = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripRefresh = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
+        Me.cmdCourse_Outline = New System.Windows.Forms.ToolStripButton()
         Me.statusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.toolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -236,9 +245,11 @@ Partial Class frmCurriculum
         Me.Panel1.SuspendLayout()
         Me.TabControl4.SuspendLayout()
         Me.TabPage6.SuspendLayout()
+        Me.ToolStrip4.SuspendLayout()
         Me.TabControl3.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.popCurriculum.SuspendLayout()
+        Me.ToolStrip3.SuspendLayout()
         Me.toolStrip1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -298,14 +309,14 @@ Partial Class frmCurriculum
         '
         Me.dgView.AllowUserToAddRows = False
         Me.dgView.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.LightBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SubjectCode, Me.Column21, Me.Column22, Me.DescriptiveTitle, Me.Column9, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column10, Me.Column11, Me.Column12, Me.Column23, Me.Column13, Me.Column14, Me.Column15, Me.Column16, Me.Column17, Me.Column18, Me.Column19, Me.Column20})
         Me.dgView.ContextMenuStrip = Me.popSubjects
@@ -331,6 +342,7 @@ Partial Class frmCurriculum
         Me.Column21.HeaderText = "Subject ID"
         Me.Column21.Name = "Column21"
         Me.Column21.ReadOnly = True
+        Me.Column21.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Column21.Width = 5
         '
         'Column22
@@ -564,6 +576,7 @@ Partial Class frmCurriculum
         '
         Me.PropertiesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PropertiesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.PropertiesToolStripMenuItem.Image = CType(resources.GetObject("PropertiesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PropertiesToolStripMenuItem.Name = "PropertiesToolStripMenuItem"
         Me.PropertiesToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
         Me.PropertiesToolStripMenuItem.Text = "Subject Properties..."
@@ -678,7 +691,7 @@ Partial Class frmCurriculum
         Me.lvCurriculum.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader14, Me.ColumnHeader13})
         Me.lvCurriculum.Enabled = False
         Me.lvCurriculum.FullRowSelect = True
-        Me.lvCurriculum.Location = New System.Drawing.Point(-1, 161)
+        Me.lvCurriculum.Location = New System.Drawing.Point(1, 161)
         Me.lvCurriculum.Name = "lvCurriculum"
         Me.lvCurriculum.Size = New System.Drawing.Size(203, 167)
         Me.lvCurriculum.TabIndex = 10
@@ -1114,6 +1127,7 @@ Partial Class frmCurriculum
         'TabPage6
         '
         Me.TabPage6.Controls.Add(Me.listRecord)
+        Me.TabPage6.Controls.Add(Me.ToolStrip4)
         Me.TabPage6.Location = New System.Drawing.Point(4, 23)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
@@ -1128,10 +1142,10 @@ Partial Class frmCurriculum
         Me.listRecord.Dock = System.Windows.Forms.DockStyle.Fill
         Me.listRecord.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.listRecord.FullRowSelect = True
-        Me.listRecord.Location = New System.Drawing.Point(3, 3)
+        Me.listRecord.Location = New System.Drawing.Point(3, 28)
         Me.listRecord.Name = "listRecord"
-        Me.listRecord.Size = New System.Drawing.Size(411, 324)
-        Me.listRecord.TabIndex = 6
+        Me.listRecord.Size = New System.Drawing.Size(411, 299)
+        Me.listRecord.TabIndex = 8
         Me.listRecord.UseCompatibleStateImageBehavior = False
         Me.listRecord.View = System.Windows.Forms.View.Details
         '
@@ -1155,6 +1169,36 @@ Partial Class frmCurriculum
         Me.ColumnHeader21.Text = "COLLEGE CODE"
         Me.ColumnHeader21.Width = 104
         '
+        'ToolStrip4
+        '
+        Me.ToolStrip4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripSeparator12})
+        Me.ToolStrip4.Location = New System.Drawing.Point(3, 3)
+        Me.ToolStrip4.Name = "ToolStrip4"
+        Me.ToolStrip4.Size = New System.Drawing.Size(411, 25)
+        Me.ToolStrip4.TabIndex = 7
+        Me.ToolStrip4.Text = "ToolStrip4"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(51, 22)
+        Me.ToolStripButton1.Text = "&New"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(66, 22)
+        Me.ToolStripButton2.Text = "&Refresh"
+        '
+        'ToolStripSeparator12
+        '
+        Me.ToolStripSeparator12.Name = "ToolStripSeparator12"
+        Me.ToolStripSeparator12.Size = New System.Drawing.Size(6, 25)
+        '
         'TabControl3
         '
         Me.TabControl3.Controls.Add(Me.TabPage5)
@@ -1168,6 +1212,7 @@ Partial Class frmCurriculum
         'TabPage5
         '
         Me.TabPage5.Controls.Add(Me.lsvCurriculum)
+        Me.TabPage5.Controls.Add(Me.ToolStrip3)
         Me.TabPage5.Location = New System.Drawing.Point(4, 23)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
@@ -1184,11 +1229,11 @@ Partial Class frmCurriculum
         Me.lsvCurriculum.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsvCurriculum.FullRowSelect = True
         Me.lsvCurriculum.HideSelection = False
-        Me.lsvCurriculum.Location = New System.Drawing.Point(3, 3)
+        Me.lsvCurriculum.Location = New System.Drawing.Point(3, 28)
         Me.lsvCurriculum.Name = "lsvCurriculum"
-        Me.lsvCurriculum.Size = New System.Drawing.Size(411, 270)
+        Me.lsvCurriculum.Size = New System.Drawing.Size(411, 245)
         Me.lsvCurriculum.SmallImageList = Me.img16X16
-        Me.lsvCurriculum.TabIndex = 38
+        Me.lsvCurriculum.TabIndex = 39
         Me.lsvCurriculum.UseCompatibleStateImageBehavior = False
         Me.lsvCurriculum.View = System.Windows.Forms.View.Details
         '
@@ -1273,6 +1318,49 @@ Partial Class frmCurriculum
         Me.cmdPrintCurriculumDetails.Name = "cmdPrintCurriculumDetails"
         Me.cmdPrintCurriculumDetails.Size = New System.Drawing.Size(200, 22)
         Me.cmdPrintCurriculumDetails.Text = "Print Curriculum Details"
+        '
+        'ToolStrip3
+        '
+        Me.ToolStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripNew, Me.ToolStripRefresh, Me.ToolStripSeparator11, Me.cmdCourse_Outline})
+        Me.ToolStrip3.Location = New System.Drawing.Point(3, 3)
+        Me.ToolStrip3.Name = "ToolStrip3"
+        Me.ToolStrip3.Size = New System.Drawing.Size(411, 25)
+        Me.ToolStrip3.TabIndex = 0
+        Me.ToolStrip3.Text = "ToolStrip3"
+        '
+        'ToolStripNew
+        '
+        Me.ToolStripNew.Image = CType(resources.GetObject("ToolStripNew.Image"), System.Drawing.Image)
+        Me.ToolStripNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripNew.Name = "ToolStripNew"
+        Me.ToolStripNew.Size = New System.Drawing.Size(51, 22)
+        Me.ToolStripNew.Text = "&New"
+        '
+        'ToolStripRefresh
+        '
+        Me.ToolStripRefresh.Image = CType(resources.GetObject("ToolStripRefresh.Image"), System.Drawing.Image)
+        Me.ToolStripRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripRefresh.Name = "ToolStripRefresh"
+        Me.ToolStripRefresh.Size = New System.Drawing.Size(66, 22)
+        Me.ToolStripRefresh.Text = "&Refresh"
+        '
+        'ToolStripSeparator11
+        '
+        Me.ToolStripSeparator11.Name = "ToolStripSeparator11"
+        Me.ToolStripSeparator11.Size = New System.Drawing.Size(6, 25)
+        '
+        'cmdCourse_Outline
+        '
+        Me.cmdCourse_Outline.BackColor = System.Drawing.Color.Transparent
+        Me.cmdCourse_Outline.BackgroundImage = CType(resources.GetObject("cmdCourse_Outline.BackgroundImage"), System.Drawing.Image)
+        Me.cmdCourse_Outline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmdCourse_Outline.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdCourse_Outline.ForeColor = System.Drawing.Color.White
+        Me.cmdCourse_Outline.Image = CType(resources.GetObject("cmdCourse_Outline.Image"), System.Drawing.Image)
+        Me.cmdCourse_Outline.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.cmdCourse_Outline.Name = "cmdCourse_Outline"
+        Me.cmdCourse_Outline.Size = New System.Drawing.Size(105, 22)
+        Me.cmdCourse_Outline.Text = "Course Outline"
         '
         'statusStrip1
         '
@@ -2092,9 +2180,15 @@ Partial Class frmCurriculum
         Me.Panel1.ResumeLayout(False)
         Me.TabControl4.ResumeLayout(False)
         Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
+        Me.ToolStrip4.ResumeLayout(False)
+        Me.ToolStrip4.PerformLayout()
         Me.TabControl3.ResumeLayout(False)
         Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
         Me.popCurriculum.ResumeLayout(False)
+        Me.ToolStrip3.ResumeLayout(False)
+        Me.ToolStrip3.PerformLayout()
         Me.toolStrip1.ResumeLayout(False)
         Me.toolStrip1.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
@@ -2193,31 +2287,6 @@ Partial Class frmCurriculum
     Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
     Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XtraTabPage2 As DevExpress.XtraTab.XtraTabPage
-    Friend WithEvents SubjectCode As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column21 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column22 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DescriptiveTitle As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Column7 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Column8 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Column10 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Column11 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Column12 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Column23 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column13 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column14 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column15 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Column16 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Column17 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column18 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column19 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column20 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SetPreToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SubjectEquivalentToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents XtraTabControl2 As DevExpress.XtraTab.XtraTabControl
@@ -2241,19 +2310,10 @@ Partial Class frmCurriculum
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents TabControl3 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
-    Public WithEvents lsvCurriculum As System.Windows.Forms.ListView
-    Public WithEvents _column_11 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
-    Public WithEvents _column_12 As System.Windows.Forms.ColumnHeader
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents TabControl4 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
-    Friend WithEvents listRecord As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader18 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader19 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader20 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader21 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents StatusStrip2 As System.Windows.Forms.StatusStrip
     Friend WithEvents cboOfferingTerm As MTGCComboBox
@@ -2326,5 +2386,48 @@ Partial Class frmCurriculum
     Friend WithEvents ColumnHeader58 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader59 As System.Windows.Forms.ColumnHeader
     Friend WithEvents StatusStrip5 As System.Windows.Forms.StatusStrip
+    Friend WithEvents SubjectCode As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column21 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column22 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescriptiveTitle As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Column7 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Column8 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Column10 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Column11 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Column12 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Column23 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column13 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column14 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column15 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Column16 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Column17 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column18 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column19 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column20 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Public WithEvents lsvCurriculum As System.Windows.Forms.ListView
+    Public WithEvents _column_11 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Public WithEvents _column_12 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ToolStrip3 As System.Windows.Forms.ToolStrip
+    Friend WithEvents cmdCourse_Outline As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripNew As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripRefresh As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator11 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents listRecord As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader18 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader19 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader20 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader21 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ToolStrip4 As System.Windows.Forms.ToolStrip
+    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator12 As System.Windows.Forms.ToolStripSeparator
 
 End Class

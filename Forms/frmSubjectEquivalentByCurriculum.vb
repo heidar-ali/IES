@@ -36,6 +36,13 @@ Public Class frmSubjectEquivalentByCurriculum
                     Case TranDBResult.Success
                         ShowSubjectEquivalence(CurSubjectID)
 
+
+                        lblCount.Text = "No. of Item(s): " & dgSubject.RowCount
+
+                        lblCo.Text = SetCoRequisite(xCurriculumID, CurSubjectID)
+                        lblPreReq.Text = SetPreRequisite(xCurriculumID, CurSubjectID)
+                        lblSub.Text = SetSubEquivalent(xCurriculumID, CurSubjectID)
+
                     Case TranDBResult.DuplicateID
                         MsgBox("Subject already set as its EQUIVALENCE", vbExclamation) : Exit Sub
 
@@ -170,6 +177,13 @@ Public Class frmSubjectEquivalentByCurriculum
 
                     If DeleteSubjectEquivalence(Pre) = TranDBResult.Success Then
                         ShowSubjectEquivalence(CurSubjectID)
+
+                        lblCount.Text = "No. of Item(s): " & dgSubject.RowCount
+
+                        lblCo.Text = SetCoRequisite(xCurriculumID, CurSubjectID)
+                        lblPreReq.Text = SetPreRequisite(xCurriculumID, CurSubjectID)
+                        lblSub.Text = SetSubEquivalent(xCurriculumID, CurSubjectID)
+
                     End If
 
                 End If
@@ -194,6 +208,13 @@ Public Class frmSubjectEquivalentByCurriculum
 
                     If DeleteSubjectEquivalence(Pre) = TranDBResult.Success Then
                         ShowSubjectEquivalence(CurSubjectID)
+
+                        lblCount.Text = "No. of Item(s): " & dgSubject.RowCount
+
+                        lblCo.Text = SetCoRequisite(xCurriculumID, CurSubjectID)
+                        lblPreReq.Text = SetPreRequisite(xCurriculumID, CurSubjectID)
+                        lblSub.Text = SetSubEquivalent(xCurriculumID, CurSubjectID)
+
                     End If
 
                 Next

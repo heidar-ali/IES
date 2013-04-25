@@ -59,10 +59,10 @@ Partial Class frmSubjectProperties
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(0, 188)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 205)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(622, 313)
+        Me.TabControl1.Size = New System.Drawing.Size(573, 331)
         Me.TabControl1.TabIndex = 4
         '
         'TabPage1
@@ -71,7 +71,7 @@ Partial Class frmSubjectProperties
         Me.TabPage1.Location = New System.Drawing.Point(4, 23)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(614, 286)
+        Me.TabPage1.Size = New System.Drawing.Size(565, 304)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Pre-Requisite/Co-Requisite"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -84,7 +84,7 @@ Partial Class frmSubjectProperties
         Me.lvPrerequisite.FullRowSelect = True
         Me.lvPrerequisite.Location = New System.Drawing.Point(3, 3)
         Me.lvPrerequisite.Name = "lvPrerequisite"
-        Me.lvPrerequisite.Size = New System.Drawing.Size(608, 280)
+        Me.lvPrerequisite.Size = New System.Drawing.Size(559, 298)
         Me.lvPrerequisite.TabIndex = 3
         Me.lvPrerequisite.UseCompatibleStateImageBehavior = False
         Me.lvPrerequisite.View = System.Windows.Forms.View.Details
@@ -118,7 +118,7 @@ Partial Class frmSubjectProperties
         Me.TabPage3.Controls.Add(Me.lvEquivalence)
         Me.TabPage3.Location = New System.Drawing.Point(4, 23)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(614, 286)
+        Me.TabPage3.Size = New System.Drawing.Size(565, 304)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Equivalence"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -130,7 +130,7 @@ Partial Class frmSubjectProperties
         Me.lvEquivalence.FullRowSelect = True
         Me.lvEquivalence.Location = New System.Drawing.Point(0, 0)
         Me.lvEquivalence.Name = "lvEquivalence"
-        Me.lvEquivalence.Size = New System.Drawing.Size(614, 286)
+        Me.lvEquivalence.Size = New System.Drawing.Size(565, 304)
         Me.lvEquivalence.TabIndex = 5
         Me.lvEquivalence.UseCompatibleStateImageBehavior = False
         Me.lvEquivalence.View = System.Windows.Forms.View.Details
@@ -161,7 +161,7 @@ Partial Class frmSubjectProperties
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(614, 286)
+        Me.TabPage2.Size = New System.Drawing.Size(565, 304)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Link Information"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -173,7 +173,7 @@ Partial Class frmSubjectProperties
         Me.lvOfferingHistory.FullRowSelect = True
         Me.lvOfferingHistory.Location = New System.Drawing.Point(3, 3)
         Me.lvOfferingHistory.Name = "lvOfferingHistory"
-        Me.lvOfferingHistory.Size = New System.Drawing.Size(608, 280)
+        Me.lvOfferingHistory.Size = New System.Drawing.Size(559, 298)
         Me.lvOfferingHistory.TabIndex = 4
         Me.lvOfferingHistory.UseCompatibleStateImageBehavior = False
         Me.lvOfferingHistory.View = System.Windows.Forms.View.Details
@@ -198,7 +198,7 @@ Partial Class frmSubjectProperties
         'ColumnHeader18
         '
         Me.ColumnHeader18.Text = "Major Studies"
-        Me.ColumnHeader18.Width = 128
+        Me.ColumnHeader18.Width = 182
         '
         'ColumnHeader19
         '
@@ -211,6 +211,7 @@ Partial Class frmSubjectProperties
         Me.Grid.ColumnInfo = "2,1,0,0,0,100,Columns:0{Width:126;}" & Global.Microsoft.VisualBasic.ChrW(9) & "1{Width:442;}" & Global.Microsoft.VisualBasic.ChrW(9)
         Me.Grid.Dock = System.Windows.Forms.DockStyle.Top
         Me.Grid.FixedRows = 0
+        Me.Grid.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grid.GridColorFixed = System.Drawing.SystemColors.ControlDark
         Me.Grid.Location = New System.Drawing.Point(0, 0)
         Me.Grid.Name = "Grid"
@@ -218,7 +219,7 @@ Partial Class frmSubjectProperties
         Me.Grid.NodeOpenPicture = Nothing
         Me.Grid.OutlineCol = -1
         Me.Grid.Rows = 9
-        Me.Grid.Size = New System.Drawing.Size(622, 188)
+        Me.Grid.Size = New System.Drawing.Size(573, 205)
         Me.Grid.StyleInfo = resources.GetString("Grid.StyleInfo")
         Me.Grid.TabIndex = 3
         Me.Grid.TreeColor = System.Drawing.Color.DarkGray
@@ -227,7 +228,7 @@ Partial Class frmSubjectProperties
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(622, 501)
+        Me.ClientSize = New System.Drawing.Size(573, 536)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Grid)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

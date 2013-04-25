@@ -60,7 +60,7 @@ Public Class frmSubjectProperties
 
         ShowPrerequisite(sSubjectId)
         ShowEquivalence(sSubjectId)
-
+        ShowLinkInformation(sSubjectId)
 
         Me.ShowDialog()
     End Sub
@@ -71,6 +71,12 @@ Public Class frmSubjectProperties
 
     Private Sub ShowEquivalence(ByVal CurSubjectID As String)
         FillListView("SELECT fnSubjectCode(SubjectID),SubjectID,fnSubjectLectUnits(SubjectID),fnSubjectDesc(SubjectID),Remarks FROM tblPrerequisite WHERE Remarks = 'Equivalence' AND Curriculum_SubjectID='" & CurSubjectID & "'", lvEquivalence, False)
+    End Sub
+
+    Private Sub ShowLinkInformation(ByVal curSubjectID As String)
+        FillListView("SELECT C.CurriculumCode,`fnProgramCollegeCode`(PM.`ProgID`), fnProgramCode(PM.`ProgID`),`fnDisciplineMajors`(PM.`MajorDiscID`),`fnYearTerm`(CD.`YearTermID`) " & _
+                     "FROM `tblcurriculum` AS C INNER JOIN `tblcurriculumdetails` AS CD ON C.CurriculumID = CD.`CurriculumID`LEFT JOIN `tblprogrammajors` AS PM ON C.`ProgramID` = PM.ProgID " & _
+                     "WHERE CD.SubjectID='" & curSubjectID & "'", lvOfferingHistory, False)
     End Sub
 
 End Class

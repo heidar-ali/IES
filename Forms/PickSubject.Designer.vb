@@ -54,6 +54,7 @@ Partial Class PickSubject
         '
         'cmdCancel
         '
+        Me.cmdCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdCancel.Location = New System.Drawing.Point(255, 12)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(58, 23)
@@ -63,6 +64,7 @@ Partial Class PickSubject
         '
         'cmdSelect
         '
+        Me.cmdSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdSelect.Location = New System.Drawing.Point(319, 12)
         Me.cmdSelect.Name = "cmdSelect"
         Me.cmdSelect.Size = New System.Drawing.Size(75, 23)
@@ -87,6 +89,7 @@ Partial Class PickSubject
         '
         Me.lvResult.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
         Me.lvResult.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lvResult.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvResult.FullRowSelect = True
         Me.lvResult.Location = New System.Drawing.Point(0, 41)
         Me.lvResult.MultiSelect = False
@@ -98,7 +101,7 @@ Partial Class PickSubject
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "Subject"
+        Me.ColumnHeader1.Text = "SUBJECT CODE"
         Me.ColumnHeader1.Width = 114
         '
         'ColumnHeader2
@@ -108,12 +111,12 @@ Partial Class PickSubject
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "Units"
+        Me.ColumnHeader3.Text = "UNITS"
         Me.ColumnHeader3.Width = 41
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "Description"
+        Me.ColumnHeader4.Text = "DESCRIPTION"
         Me.ColumnHeader4.Width = 235
         '
         'PickSubject

@@ -32,6 +32,7 @@ Public Class frmAddCurriculum
         Me.Close()
     End Sub
 
+#Region "ShowForm"
     Public Sub ShowForm(Optional ByVal Campus As String = "", Optional ByVal CampusID As String = "", _
                         Optional ByVal Program As String = "", Optional ByVal sProgramID As String = "")
 
@@ -51,12 +52,14 @@ Public Class frmAddCurriculum
 
         Me.ShowDialog()
     End Sub
+#End Region
 
-    Public Sub ShowEdit(ByVal sID As String)
+#Region "ShowEdit"
+    Public Sub ShowEdit(ByVal sID As String, ByVal Campus As String)
         Dim vCur As tCurriculum
         Dim camp As tSchool
 
-        cboCampus.Visible = False
+        cboCampus.Visible = True
 
 
         If GetCurriculumByID(sID, vCur) = TranDBResult.Success Then
@@ -70,6 +73,11 @@ Public Class frmAddCurriculum
             '    cboCampus1.Text = camp.CampusName
             '    cboCampusID.Text = camp.CampusID
             'End If
+
+            If Not cboCampus.ItemSelect(2, Campus, False, True) Then
+                cboCampus.SelectedIndex = -1
+            End If
+
         End If
 
 
@@ -77,6 +85,9 @@ Public Class frmAddCurriculum
 
         Me.ShowDialog()
     End Sub
+#End Region
+
+#Region "UpdateData"
     Private Function UpdateData() As Boolean
         Dim vDepartment As tDepartment
         Dim newCur As tCurriculum
@@ -135,7 +146,9 @@ Public Class frmAddCurriculum
         End Select
 
     End Function
+#End Region
 
+#Region "SaveData"
     Private Function SaveData() As Boolean
         Dim vDepartment As tDepartment
 
@@ -185,6 +198,9 @@ Public Class frmAddCurriculum
                 SaveData = False
         End Select
     End Function
+#End Region
+
+#Region "ValidateData"
     Public Function ValidateData() As Boolean
         ValidateData = False
 
@@ -208,6 +224,7 @@ Public Class frmAddCurriculum
 
         ValidateData = True
     End Function
+#End Region
 
     Private Sub cmdGetDepartmentTitle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdGetProgram.Click
         Dim Prog As tAcademicPrograms

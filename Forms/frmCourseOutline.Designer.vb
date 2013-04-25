@@ -23,11 +23,9 @@ Partial Class frmCourseOutline
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCourseOutline))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.cboYearTerm = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtSubjectCode = New System.Windows.Forms.TextBox()
@@ -38,15 +36,8 @@ Partial Class frmCourseOutline
         Me.lblLabUnit = New System.Windows.Forms.Label()
         Me.lblLecUnit = New System.Windows.Forms.Label()
         Me.lblCreditUnit = New System.Windows.Forms.Label()
-        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dgOutLine = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.cmdNew = New System.Windows.Forms.ToolStripButton()
         Me.cmdSave = New System.Windows.Forms.ToolStripButton()
@@ -66,8 +57,39 @@ Partial Class frmCourseOutline
         Me.cboTermID = New System.Windows.Forms.ComboBox()
         Me.txtSubjectID = New System.Windows.Forms.TextBox()
         Me.cboYearLevel = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.panelSubject = New System.Windows.Forms.PictureBox()
+        Me.PanelList = New System.Windows.Forms.Panel()
+        Me.listView = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmdAssign = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cmdReplace = New System.Windows.Forms.Button()
         CType(Me.dgOutLine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.panelSubject, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelList.SuspendLayout()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -79,26 +101,6 @@ Partial Class frmCourseOutline
         Me.Label1.Size = New System.Drawing.Size(115, 14)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "COURSE OUTLINE:"
-        '
-        'LineShape1
-        '
-        Me.LineShape1.BorderColor = System.Drawing.Color.Silver
-        Me.LineShape1.BorderWidth = 2
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 10
-        Me.LineShape1.X2 = 450
-        Me.LineShape1.Y1 = 66
-        Me.LineShape1.Y2 = 66
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(18, 80)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 14)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Year/ Term"
         '
         'cboYearTerm
         '
@@ -123,30 +125,32 @@ Partial Class frmCourseOutline
         '
         'txtSubjectCode
         '
-        Me.txtSubjectCode.BackColor = System.Drawing.SystemColors.Info
+        Me.txtSubjectCode.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtSubjectCode.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSubjectCode.Location = New System.Drawing.Point(100, 108)
         Me.txtSubjectCode.Name = "txtSubjectCode"
-        Me.txtSubjectCode.Size = New System.Drawing.Size(155, 22)
+        Me.txtSubjectCode.Size = New System.Drawing.Size(322, 22)
         Me.txtSubjectCode.TabIndex = 25
         '
         'cmdGetProgram
         '
+        Me.cmdGetProgram.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmdGetProgram.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdGetProgram.Image = CType(resources.GetObject("cmdGetProgram.Image"), System.Drawing.Image)
-        Me.cmdGetProgram.Location = New System.Drawing.Point(255, 107)
+        Me.cmdGetProgram.Location = New System.Drawing.Point(405, 108)
         Me.cmdGetProgram.Name = "cmdGetProgram"
-        Me.cmdGetProgram.Size = New System.Drawing.Size(26, 24)
+        Me.cmdGetProgram.Size = New System.Drawing.Size(14, 20)
         Me.cmdGetProgram.TabIndex = 24
         Me.cmdGetProgram.UseVisualStyleBackColor = True
         '
         'txtDescriptive
         '
-        Me.txtDescriptive.BackColor = System.Drawing.SystemColors.Info
+        Me.txtDescriptive.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtDescriptive.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescriptive.Location = New System.Drawing.Point(100, 136)
+        Me.txtDescriptive.Location = New System.Drawing.Point(100, 134)
         Me.txtDescriptive.Name = "txtDescriptive"
-        Me.txtDescriptive.Size = New System.Drawing.Size(350, 22)
+        Me.txtDescriptive.ReadOnly = True
+        Me.txtDescriptive.Size = New System.Drawing.Size(322, 22)
         Me.txtDescriptive.TabIndex = 27
         '
         'Label4
@@ -154,7 +158,7 @@ Partial Class frmCourseOutline
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(97, 171)
+        Me.Label4.Location = New System.Drawing.Point(195, 171)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(54, 13)
         Me.Label4.TabIndex = 29
@@ -165,7 +169,7 @@ Partial Class frmCourseOutline
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(199, 171)
+        Me.Label5.Location = New System.Drawing.Point(297, 171)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 13)
         Me.Label5.TabIndex = 30
@@ -176,7 +180,7 @@ Partial Class frmCourseOutline
         Me.lblLabUnit.AutoSize = True
         Me.lblLabUnit.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLabUnit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblLabUnit.Location = New System.Drawing.Point(157, 171)
+        Me.lblLabUnit.Location = New System.Drawing.Point(255, 171)
         Me.lblLabUnit.Name = "lblLabUnit"
         Me.lblLabUnit.Size = New System.Drawing.Size(15, 14)
         Me.lblLabUnit.TabIndex = 32
@@ -187,7 +191,7 @@ Partial Class frmCourseOutline
         Me.lblLecUnit.AutoSize = True
         Me.lblLecUnit.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLecUnit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblLecUnit.Location = New System.Drawing.Point(258, 171)
+        Me.lblLecUnit.Location = New System.Drawing.Point(356, 171)
         Me.lblLecUnit.Name = "lblLecUnit"
         Me.lblLecUnit.Size = New System.Drawing.Size(15, 14)
         Me.lblLecUnit.TabIndex = 33
@@ -198,38 +202,18 @@ Partial Class frmCourseOutline
         Me.lblCreditUnit.AutoSize = True
         Me.lblCreditUnit.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCreditUnit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCreditUnit.Location = New System.Drawing.Point(368, 171)
+        Me.lblCreditUnit.Location = New System.Drawing.Point(466, 171)
         Me.lblCreditUnit.Name = "lblCreditUnit"
         Me.lblCreditUnit.Size = New System.Drawing.Size(15, 14)
         Me.lblCreditUnit.TabIndex = 34
         Me.lblCreditUnit.Text = "0"
-        '
-        'ShapeContainer2
-        '
-        Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(475, 527)
-        Me.ShapeContainer2.TabIndex = 1
-        Me.ShapeContainer2.TabStop = False
-        '
-        'LineShape2
-        '
-        Me.LineShape2.BorderColor = System.Drawing.Color.Silver
-        Me.LineShape2.BorderWidth = 2
-        Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.X1 = 11
-        Me.LineShape2.X2 = 463
-        Me.LineShape2.Y1 = 505
-        Me.LineShape2.Y2 = 505
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(300, 171)
+        Me.Label7.Location = New System.Drawing.Point(398, 171)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(62, 13)
         Me.Label7.TabIndex = 35
@@ -240,67 +224,34 @@ Partial Class frmCourseOutline
         Me.dgOutLine.AllowUserToAddRows = False
         Me.dgOutLine.AllowUserToDeleteRows = False
         Me.dgOutLine.BackgroundColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgOutLine.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgOutLine.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgOutLine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgOutLine.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.dgOutLine.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        Me.dgOutLine.EnableHeadersVisualStyles = False
         Me.dgOutLine.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.dgOutLine.Location = New System.Drawing.Point(5, 188)
         Me.dgOutLine.Name = "dgOutLine"
         Me.dgOutLine.ReadOnly = True
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.dgOutLine.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgOutLine.Size = New System.Drawing.Size(467, 231)
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.dgOutLine.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgOutLine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgOutLine.Size = New System.Drawing.Size(488, 231)
         Me.dgOutLine.TabIndex = 36
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "SUBJECT CODE"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 70
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "DESCRIPTIVE TITLE"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 210
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "LAB UNIT"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 47
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "LEC UNIT"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 47
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "CREDIT UNIT"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 47
         '
         'ToolStrip1
         '
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmdNew, Me.cmdSave, Me.cmdDelete, Me.cmdRefresh, Me.toolStripSeparator, Me.cmdClose})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(475, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(499, 25)
         Me.ToolStrip1.TabIndex = 37
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -354,11 +305,11 @@ Partial Class frmCourseOutline
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(8, 425)
+        Me.Label6.Location = New System.Drawing.Point(8, 431)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(208, 26)
+        Me.Label6.Size = New System.Drawing.Size(272, 13)
         Me.Label6.TabIndex = 41
-        Me.Label6.Text = "Assigning Pre-Requisite and Co-Requisite," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Click ASSIGN"
+        Me.Label6.Text = "Assigning Pre-Requisite and Co-Requisite, Click ASSIGN"
         '
         'lblSubjectCount
         '
@@ -453,7 +404,7 @@ Partial Class frmCourseOutline
         Me.cboTermID.BackColor = System.Drawing.SystemColors.Info
         Me.cboTermID.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTermID.FormattingEnabled = True
-        Me.cboTermID.Location = New System.Drawing.Point(353, 105)
+        Me.cboTermID.Location = New System.Drawing.Point(341, 28)
         Me.cboTermID.Name = "cboTermID"
         Me.cboTermID.Size = New System.Drawing.Size(30, 22)
         Me.cboTermID.TabIndex = 50
@@ -463,7 +414,7 @@ Partial Class frmCourseOutline
         '
         Me.txtSubjectID.BackColor = System.Drawing.SystemColors.Info
         Me.txtSubjectID.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSubjectID.Location = New System.Drawing.Point(287, 105)
+        Me.txtSubjectID.Location = New System.Drawing.Point(406, 28)
         Me.txtSubjectID.Name = "txtSubjectID"
         Me.txtSubjectID.Size = New System.Drawing.Size(39, 22)
         Me.txtSubjectID.TabIndex = 51
@@ -474,17 +425,248 @@ Partial Class frmCourseOutline
         Me.cboYearLevel.BackColor = System.Drawing.SystemColors.Info
         Me.cboYearLevel.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboYearLevel.FormattingEnabled = True
-        Me.cboYearLevel.Location = New System.Drawing.Point(389, 105)
+        Me.cboYearLevel.Location = New System.Drawing.Point(371, 28)
         Me.cboYearLevel.Name = "cboYearLevel"
         Me.cboYearLevel.Size = New System.Drawing.Size(29, 22)
         Me.cboYearLevel.TabIndex = 52
         Me.cboYearLevel.Visible = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(18, 80)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(70, 14)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Year/ Term"
+        '
+        'Label8
+        '
+        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(9, 62)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(455, 2)
+        Me.Label8.TabIndex = 53
+        '
+        'panelSubject
+        '
+        Me.panelSubject.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.panelSubject.Image = CType(resources.GetObject("panelSubject.Image"), System.Drawing.Image)
+        Me.panelSubject.Location = New System.Drawing.Point(405, 109)
+        Me.panelSubject.Name = "panelSubject"
+        Me.panelSubject.Size = New System.Drawing.Size(17, 19)
+        Me.panelSubject.TabIndex = 268
+        Me.panelSubject.TabStop = False
+        '
+        'PanelList
+        '
+        Me.PanelList.Controls.Add(Me.listView)
+        Me.PanelList.Controls.Add(Me.GroupControl1)
+        Me.PanelList.Controls.Add(Me.Panel5)
+        Me.PanelList.Location = New System.Drawing.Point(100, 130)
+        Me.PanelList.Name = "PanelList"
+        Me.PanelList.Size = New System.Drawing.Size(0, 0)
+        Me.PanelList.TabIndex = 269
+        '
+        'listView
+        '
+        Me.listView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.listView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.listView.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.listView.FullRowSelect = True
+        Me.listView.GridLines = True
+        Me.listView.Location = New System.Drawing.Point(0, 55)
+        Me.listView.Name = "listView"
+        Me.listView.Size = New System.Drawing.Size(0, 0)
+        Me.listView.TabIndex = 58
+        Me.listView.UseCompatibleStateImageBehavior = False
+        Me.listView.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "SUBJECT CODE"
+        Me.ColumnHeader1.Width = 97
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "DESCRIPTIVE TITLE"
+        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader2.Width = 212
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "LAB. UNIT"
+        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader3.Width = 63
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "ACAD. UNIT"
+        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader4.Width = 76
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "CREDIT UNIT"
+        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader5.Width = 79
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "ID"
+        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader6.Width = 0
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Appearance.BackColor = System.Drawing.Color.LightBlue
+        Me.GroupControl1.Appearance.Options.UseBackColor = True
+        Me.GroupControl1.Controls.Add(Me.txtSearch)
+        Me.GroupControl1.Controls.Add(Me.Label10)
+        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003
+        Me.GroupControl1.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(0, 55)
+        Me.GroupControl1.TabIndex = 57
+        Me.GroupControl1.Text = "SEARCH"
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtSearch.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(59, 25)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(322, 22)
+        Me.txtSearch.TabIndex = 270
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(6, 29)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 13)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Search:"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.LightBlue
+        Me.Panel5.Controls.Add(Me.Button3)
+        Me.Panel5.Controls.Add(Me.Button5)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel5.Location = New System.Drawing.Point(0, -26)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(0, 26)
+        Me.Panel5.TabIndex = 56
+        '
+        'Button3
+        '
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.Location = New System.Drawing.Point(361, 2)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(26, 23)
+        Me.Button3.TabIndex = 1
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.Location = New System.Drawing.Point(336, 2)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(26, 23)
+        Me.Button5.TabIndex = 0
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "SUBJECT CODE"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 70
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "DESCRIPTIVE TITLE"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 210
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "LAB UNIT"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 47
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "LEC UNIT"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 47
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "CREDIT UNIT"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 47
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "ID"
+        Me.Column6.MinimumWidth = 2
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column6.Width = 5
+        '
+        'cmdAssign
+        '
+        Me.cmdAssign.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdAssign.Location = New System.Drawing.Point(290, 426)
+        Me.cmdAssign.Name = "cmdAssign"
+        Me.cmdAssign.Size = New System.Drawing.Size(75, 23)
+        Me.cmdAssign.TabIndex = 270
+        Me.cmdAssign.Text = "Assign"
+        Me.cmdAssign.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(12, 504)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(475, 2)
+        Me.Label11.TabIndex = 271
+        '
+        'cmdReplace
+        '
+        Me.cmdReplace.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdReplace.Location = New System.Drawing.Point(370, 426)
+        Me.cmdReplace.Name = "cmdReplace"
+        Me.cmdReplace.Size = New System.Drawing.Size(75, 23)
+        Me.cmdReplace.TabIndex = 272
+        Me.cmdReplace.Text = "Replace"
+        Me.cmdReplace.UseVisualStyleBackColor = True
+        '
         'frmCourseOutline
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(475, 527)
+        Me.ClientSize = New System.Drawing.Size(499, 527)
+        Me.Controls.Add(Me.cmdReplace)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.cmdAssign)
+        Me.Controls.Add(Me.PanelList)
+        Me.Controls.Add(Me.panelSubject)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.cboYearLevel)
         Me.Controls.Add(Me.txtSubjectID)
         Me.Controls.Add(Me.cboTermID)
@@ -512,7 +694,6 @@ Partial Class frmCourseOutline
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtDescriptive)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ShapeContainer2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -522,15 +703,19 @@ Partial Class frmCourseOutline
         CType(Me.dgOutLine, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.panelSubject, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelList.ResumeLayout(False)
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cboYearTerm As System.Windows.Forms.ComboBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents txtSubjectCode As System.Windows.Forms.TextBox
     Friend WithEvents cmdGetProgram As System.Windows.Forms.Button
     Friend WithEvents txtDescriptive As System.Windows.Forms.TextBox
@@ -539,10 +724,8 @@ Partial Class frmCourseOutline
     Friend WithEvents lblLabUnit As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents dgOutLine As System.Windows.Forms.DataGridView
-    Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents cmdNew As System.Windows.Forms.ToolStripButton
     Friend WithEvents cmdSave As System.Windows.Forms.ToolStripButton
@@ -560,11 +743,32 @@ Partial Class frmCourseOutline
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents lblProgram As System.Windows.Forms.Label
     Friend WithEvents cboTermID As System.Windows.Forms.ComboBox
+    Friend WithEvents txtSubjectID As System.Windows.Forms.TextBox
+    Friend WithEvents cboYearLevel As System.Windows.Forms.ComboBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Private WithEvents panelSubject As System.Windows.Forms.PictureBox
+    Friend WithEvents PanelList As System.Windows.Forms.Panel
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents listView As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents txtSearch As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txtSubjectID As System.Windows.Forms.TextBox
-    Friend WithEvents cboYearLevel As System.Windows.Forms.ComboBox
+    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cmdAssign As System.Windows.Forms.Button
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents cmdReplace As System.Windows.Forms.Button
 End Class

@@ -1594,7 +1594,7 @@ Partial Class frmFeesTemplate
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(62, Byte), Integer))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(53, Byte), Integer))
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -2911,7 +2911,7 @@ Partial Class frmFeesTemplate
         '
         Me.ToolStripLabel4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(93, 22)
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(94, 22)
         Me.ToolStripLabel4.Text = "Academic Term:"
         '
         'cboSubTerm

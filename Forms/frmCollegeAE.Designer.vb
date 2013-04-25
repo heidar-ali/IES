@@ -23,14 +23,21 @@ Partial Class frmCollegeAE
     ''' </summary>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCollegeAE))
         Me.tabControl1 = New System.Windows.Forms.TabControl()
         Me.tabPage1 = New System.Windows.Forms.TabPage()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.dgCollege = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.popColleges = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cmdNewCollege = New System.Windows.Forms.ToolStripMenuItem()
         Me.cmdEditCollege = New System.Windows.Forms.ToolStripMenuItem()
@@ -66,13 +73,6 @@ Partial Class frmCollegeAE
         Me.viewFacultyInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.printScheduleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabControl1.SuspendLayout()
         Me.tabPage1.SuspendLayout()
         Me.TabControl2.SuspendLayout()
@@ -138,25 +138,25 @@ Partial Class frmCollegeAE
         Me.dgCollege.AllowUserToAddRows = False
         Me.dgCollege.AllowUserToDeleteRows = False
         Me.dgCollege.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgCollege.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgCollege.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgCollege.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgCollege.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
         Me.dgCollege.ContextMenuStrip = Me.popColleges
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgCollege.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgCollege.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgCollege.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgCollege.EnableHeadersVisualStyles = False
         Me.dgCollege.Location = New System.Drawing.Point(3, 28)
@@ -165,6 +165,57 @@ Partial Class frmCollegeAE
         Me.dgCollege.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgCollege.Size = New System.Drawing.Size(631, 466)
         Me.dgCollege.TabIndex = 12
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "COLLEGE CODE"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 150
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "COLLEGE NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 250
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "DEAN ID"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 90
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "COLLEGE DEAN"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 200
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "COLLEGE LOGO"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "INACTIVE"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column6.Width = 70
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "ID"
+        Me.Column7.MinimumWidth = 2
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 2
         '
         'popColleges
         '
@@ -494,57 +545,6 @@ Partial Class frmCollegeAE
         '
         Me.timer1.Enabled = True
         Me.timer1.Interval = 5000
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "COLLEGE CODE"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 150
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "COLLEGE NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 250
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "DEAN ID"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 90
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "COLLEGE DEAN"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 200
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "COLLEGE LOGO"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "INACTIVE"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column6.Width = 70
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "ID"
-        Me.Column7.MinimumWidth = 2
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 2
         '
         'frmCollegeAE
         '

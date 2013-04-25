@@ -23,19 +23,13 @@ Partial Class frmSubjectEquivalentByCurriculum
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSubjectEquivalentByCurriculum))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSubjectEquivalentByCurriculum))
         Me.dgSubject = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmdRemove = New System.Windows.Forms.Button()
         Me.cmdRemoveAll = New System.Windows.Forms.Button()
         Me.lblCount = New System.Windows.Forms.Label()
@@ -48,6 +42,12 @@ Partial Class frmSubjectEquivalentByCurriculum
         Me.lblPreReq = New System.Windows.Forms.Label()
         Me.lblCo = New System.Windows.Forms.Label()
         Me.lblSub = New System.Windows.Forms.Label()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgSubject, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,7 +57,7 @@ Partial Class frmSubjectEquivalentByCurriculum
         Me.dgSubject.AllowUserToDeleteRows = False
         Me.dgSubject.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -67,62 +67,11 @@ Partial Class frmSubjectEquivalentByCurriculum
         Me.dgSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgSubject.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column6, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
         Me.dgSubject.EnableHeadersVisualStyles = False
-        Me.dgSubject.Location = New System.Drawing.Point(10, 63)
+        Me.dgSubject.Location = New System.Drawing.Point(10, 68)
         Me.dgSubject.Name = "dgSubject"
         Me.dgSubject.ReadOnly = True
-        Me.dgSubject.Size = New System.Drawing.Size(579, 279)
+        Me.dgSubject.Size = New System.Drawing.Size(579, 274)
         Me.dgSubject.TabIndex = 5
-        '
-        'Column1
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column1.HeaderText = "CODE"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "SUUBJECT ID"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 5
-        '
-        'Column2
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column2.HeaderText = "DESCRIPTIVE TITLE"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 260
-        '
-        'Column3
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column3.HeaderText = "LEC UNIT"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 50
-        '
-        'Column4
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column4.HeaderText = "LAB UNIT"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 50
-        '
-        'Column5
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Column5.HeaderText = "CREDIT"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 70
         '
         'cmdRemove
         '
@@ -150,7 +99,7 @@ Partial Class frmSubjectEquivalentByCurriculum
         '
         Me.lblCount.AutoSize = True
         Me.lblCount.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCount.Location = New System.Drawing.Point(7, 348)
+        Me.lblCount.Location = New System.Drawing.Point(7, 355)
         Me.lblCount.Name = "lblCount"
         Me.lblCount.Size = New System.Drawing.Size(88, 13)
         Me.lblCount.TabIndex = 8
@@ -190,7 +139,7 @@ Partial Class frmSubjectEquivalentByCurriculum
         '
         Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(475, 36)
+        Me.Button1.Location = New System.Drawing.Point(480, 38)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(109, 24)
         Me.Button1.TabIndex = 14
@@ -204,7 +153,7 @@ Partial Class frmSubjectEquivalentByCurriculum
         Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel_Button.Image = CType(resources.GetObject("Cancel_Button.Image"), System.Drawing.Image)
         Me.Cancel_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Cancel_Button.Location = New System.Drawing.Point(486, 414)
+        Me.Cancel_Button.Location = New System.Drawing.Point(491, 414)
         Me.Cancel_Button.Name = "Cancel_Button"
         Me.Cancel_Button.Size = New System.Drawing.Size(98, 31)
         Me.Cancel_Button.TabIndex = 15
@@ -227,6 +176,7 @@ Partial Class frmSubjectEquivalentByCurriculum
         '
         Me.lblPreReq.AutoSize = True
         Me.lblPreReq.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPreReq.ForeColor = System.Drawing.Color.Maroon
         Me.lblPreReq.Location = New System.Drawing.Point(107, 390)
         Me.lblPreReq.Name = "lblPreReq"
         Me.lblPreReq.Size = New System.Drawing.Size(19, 13)
@@ -237,6 +187,7 @@ Partial Class frmSubjectEquivalentByCurriculum
         '
         Me.lblCo.AutoSize = True
         Me.lblCo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCo.ForeColor = System.Drawing.Color.Maroon
         Me.lblCo.Location = New System.Drawing.Point(107, 410)
         Me.lblCo.Name = "lblCo"
         Me.lblCo.Size = New System.Drawing.Size(19, 13)
@@ -247,11 +198,67 @@ Partial Class frmSubjectEquivalentByCurriculum
         '
         Me.lblSub.AutoSize = True
         Me.lblSub.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSub.ForeColor = System.Drawing.Color.Blue
         Me.lblSub.Location = New System.Drawing.Point(107, 431)
         Me.lblSub.Name = "lblSub"
         Me.lblSub.Size = New System.Drawing.Size(19, 13)
         Me.lblSub.TabIndex = 19
         Me.lblSub.Text = "---"
+        '
+        'Column1
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column1.Frozen = True
+        Me.Column1.HeaderText = "CODE"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.Frozen = True
+        Me.Column6.HeaderText = "SUBJECT ID"
+        Me.Column6.MinimumWidth = 2
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column6.Width = 2
+        '
+        'Column2
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column2.HeaderText = "DESCRIPTIVE TITLE"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 260
+        '
+        'Column3
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column3.HeaderText = "LEC UNIT"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 50
+        '
+        'Column4
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column4.HeaderText = "LAB UNIT"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 50
+        '
+        'Column5
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Column5.HeaderText = "CREDIT"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 70
         '
         'frmSubjectEquivalentByCurriculum
         '
@@ -287,12 +294,6 @@ Partial Class frmSubjectEquivalentByCurriculum
     Friend WithEvents cmdRemove As System.Windows.Forms.Button
     Friend WithEvents cmdRemoveAll As System.Windows.Forms.Button
     Friend WithEvents lblCount As System.Windows.Forms.Label
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -302,5 +303,11 @@ Partial Class frmSubjectEquivalentByCurriculum
     Friend WithEvents lblPreReq As System.Windows.Forms.Label
     Friend WithEvents lblCo As System.Windows.Forms.Label
     Friend WithEvents lblSub As System.Windows.Forms.Label
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

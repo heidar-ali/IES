@@ -103,6 +103,10 @@ Public Class frmAcadProgramAE
                     cboTermID.Text = YearTerm.YearlyHS
             End Select
 
+            If Not cboCampus.ItemSelect(2, "", False, False) Then
+                cboCampus.SelectedIndex = -1
+            End If
+
             '=========================== PROGRAM CLASS ====================================
             If GetProgramClass(vProg.Classification, vClass) = TranDBResult.Success Then
                 cboClassification1.Text = vClass.ClassDesc

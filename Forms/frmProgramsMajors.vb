@@ -258,8 +258,7 @@ Public Class frmProgramsMajors
     End Sub
 
     Private Sub PrintAllAcademicProgramsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PrintAllAcademicProgramsToolStripMenuItem.Click
-        Dim frm As New frmPrintPreview()
-        'frm.rptAcademiProgramByCampus(cboCampusID.Text, CurrentUser.UserID)
+
     End Sub
 
     Private Sub cmdEditMajor_Click(sender As System.Object, e As System.EventArgs) Handles cmdEditMajor.Click
