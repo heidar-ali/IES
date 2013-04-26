@@ -361,7 +361,7 @@ ReleaseAndExit:
 
         Dim vRS As MySqlDataReader = com.ExecuteReader()
         vRS.Read()
-        If vRS.HasRows = True Then
+        If vRS.HasRows Then
             ProgramRecordExist = TranDBResult.Success
         Else
             ProgramRecordExist = TranDBResult.Failed
@@ -519,12 +519,31 @@ ReleaseAndExit:
         Dim vRS As MySqlDataReader = com.ExecuteReader()
         vRS.Read()
         If vRS.HasRows = True Then
+            vMajor.MajorDescription = vRS("MajorDiscription").ToString()
 
             GetProgramMajorsByProgramID = TranDBResult.Success
         Else
             GetProgramMajorsByProgramID = TranDBResult.Failed
         End If
         'release
+        vRS.Close()
+    End Function
+
+    Public Function GetProgramMajorsByCurriculumProgramID(ByVal ProgramID As String, ByVal MajorID As String, _
+                                                          ByRef vMajor As tMajors) As TranDBResult
+        Dim com As New MySqlCommand("SELECT `fnMajorName`(C.`MajorID`) AS Description, C.`MajorID` FROM tblprograms AS P " & _
+                                    "INNER JOIN `tblcurriculum` AS C ON C.`ProgramID` = P.`ProgID` " & _
+                                    "WHERE C.ProgramID='" & ProgramID & "' AND C.MajorID='" & MajorID & "';", con)
+        Dim vRS As MySqlDataReader = com.ExecuteReader()
+        vRS.Read()
+        If vRS.HasRows Then
+            vMajor.MajorDescription = vRS("Description").ToString()
+            vMajor.MajorID = vRS("MajorID").ToString()
+
+            GetProgramMajorsByCurriculumProgramID = TranDBResult.Success
+        Else
+            GetProgramMajorsByCurriculumProgramID = TranDBResult.Failed
+        End If
         vRS.Close()
     End Function
 

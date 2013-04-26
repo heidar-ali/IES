@@ -152,7 +152,7 @@ Public Class frmCurriculum
     Private Sub cmdNewCur_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdNewCur.Click, ToolStripNew.Click
         On Error GoTo err
         Dim frm As New frmAddCurriculum()
-        frm.ShowForm(cboCampus.Text, cboCampusID.Text, listRecord.FocusedItem.SubItems(2).Text, listRecord.FocusedItem.SubItems(1).Text)
+        frm.ShowForm(cboCampus.Text, cboCampusID.Text, listRecord.FocusedItem.SubItems(2).Text, ProgramID)
         Exit Sub
 err:
         DisplayErrorMsg("frmCurriculum", "cmdNewCur_Click", Err.Number, Err.Description)
@@ -163,7 +163,8 @@ err:
         If lsvCurriculum.Items.Count > 0 Then
             If Len(lsvCurriculum.FocusedItem.SubItems(1).Text) > 0 Then
                 Dim frm As New frmAddCurriculum()
-                frm.ShowEdit(lsvCurriculum.FocusedItem.SubItems(1).Text, cboCampusID.Text)
+                frm.ShowEdit(lsvCurriculum.FocusedItem.SubItems(1).Text, cboCampus.Text, cboCampusID.Text, _
+                             listRecord.FocusedItem.SubItems(2).Text, ProgramID)
             End If
         End If
     End Sub

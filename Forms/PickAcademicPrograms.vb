@@ -6,10 +6,10 @@ Public Class PickAcademicPrograms
     Dim tmpProgramName As String
     Dim tmpProgramCode As String
 
-    Public Function GetAcademicProgram(Optional ByVal CampusID As Integer = 1, Optional ByRef TextObject As String = "0000", Optional ByRef sProgramID As String = "", Optional ByRef ProgramCode As String = "") As String
+    Public Function GetAcademicProgram(Optional ByVal CampusID As Integer = 1, Optional ByRef TextObject As String = "", _
+                                       Optional ByRef sProgramID As String = "", Optional ByRef ProgramCode As String = "") As String
 
         Dim sSQL As String
-
 
         'set fail to default
         'GetAcademicProgram = ""
@@ -26,7 +26,7 @@ ConShowForm:
         Me.ShowDialog()
 
         'this next line will not execute unload this for will be unloaded
-        TextObject = tmpProgramCode
+        TextObject = tmpProgramName
         sProgramID = tmpProgramID
         ProgramCode = tmpProgramCode
 

@@ -100,4 +100,8 @@ Public Class PickSubject
     Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
         BrowseBook(TextBox1.Text)
     End Sub
+
+    Private Sub PickSubject_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        FillList()
+    End Sub
 End Class

@@ -12,6 +12,8 @@ Public Class frmAddCurriculum
 
     Dim newCur As tCurriculum
 
+    Dim State As FormState
+
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
         Select Case cmdSave.Text
@@ -42,6 +44,11 @@ Public Class frmAddCurriculum
 
         cboCampus1.Visible = False
 
+        'cboCampus.SelectedValue.Contains(ReadINI("Campus", "Campus", CONFIG_INI_FILE))
+        If Not cboCampus.ItemSelect(2, ReadINI("Campus", "Campus", CONFIG_INI_FILE), False, True) Then
+            cboCampus.SelectedIndex = -1
+        End If
+
         If GetCampusByCampusID(CampusID, camp) = TranDBResult.Success Then
             cboCampus1.Text = camp.CampusName
             cboCampusID.Text = camp.CampusID
@@ -50,16 +57,30 @@ Public Class frmAddCurriculum
         txtProgram.Text = Program
         ProgramID = sProgramID
 
+        State = FormState.addFormState
+
         Me.ShowDialog()
     End Sub
 #End Region
 
 #Region "ShowEdit"
-    Public Sub ShowEdit(ByVal sID As String, ByVal Campus As String)
+    Public Sub ShowEdit(ByVal sID As String, ByVal Campus As String, ByVal CampusID As String, _
+                        Optional ByVal Program As String = "", Optional ByVal sProgramID As String = "")
+
+
         Dim vCur As tCurriculum
         Dim camp As tSchool
+        Dim vMajor As tMajors
 
         cboCampus.Visible = True
+
+        fillComboAcademicMajors(cboMajor, "SELECT tbldisciplinemajors.MajorDescription " & _
+                                     "FROM tblprograms INNER JOIN   tblprogrammajors ON tblprograms.ProgID = tblprogrammajors.ProgID INNER JOIN tbldisciplinemajors ON tblprogrammajors.MajorDiscID = tbldisciplinemajors.ID " & _
+                                     "WHERE tblPrograms.ProgID='" & sProgramID & "'")
+
+        fillComboAcademicMajors(cboMajorID, "SELECT tbldisciplinemajors.ID " & _
+                                "FROM tblprograms INNER JOIN   tblprogrammajors ON tblprograms.ProgID = tblprogrammajors.ProgID INNER JOIN tbldisciplinemajors ON tblprogrammajors.MajorDiscID = tbldisciplinemajors.ID " & _
+                                "WHERE tblPrograms.ProgID='" & sProgramID & "'")
 
 
         If GetCurriculumByID(sID, vCur) = TranDBResult.Success Then
@@ -69,21 +90,26 @@ Public Class frmAddCurriculum
             txtNote.Text = vCur.Notes
             chkLocked.CheckState = IntToBoolean(vCur.IsLocked)
 
-            'If GetCampusByCampusID(vCur., camp) = TranDBResult.Success Then
-            '    cboCampus1.Text = camp.CampusName
-            '    cboCampusID.Text = camp.CampusID
-            'End If
-
-            If Not cboCampus.ItemSelect(2, Campus, False, True) Then
-                cboCampus.SelectedIndex = -1
-            End If
-
         End If
 
+        If GetCampusByCampusID(CampusID, camp) = TranDBResult.Success Then
+            cboCampus1.Text = camp.CampusName
+            cboCampusID.Text = camp.CampusID
+        End If
 
+        txtProgram.Text = Program
+        ProgramID = sProgramID
 
+      
+        If GetProgramMajorsByCurriculumProgramID(sProgramID, vCur.MajorID, vMajor) = TranDBResult.Success Then
+            cboMajor.Text = vMajor.MajorDescription
+            cboMajorID.Text = vMajor.MajorID
+        End If
+
+        State = FormState.updateFormState
 
         Me.ShowDialog()
+
     End Sub
 #End Region
 
@@ -104,7 +130,7 @@ Public Class frmAddCurriculum
 
         newCur.CurriculumID = CurID
         newCur.CurriculumCode = txtCurriculumCode.Text
-
+        newCur.MajorID = cboMajorID.Text
         newCur.Description = txtDescription.Text
         newCur.Notes = txtNote.Text
         newCur.IsLocked = BooleanToInt(chkLocked.Text)
@@ -124,19 +150,6 @@ Public Class frmAddCurriculum
                 '-------------------------------------
                 MsgBox("Curriculum Entry successfully Edited.", vbInformation)
                 UpdateData = True
-
-            Case TranDBResult.DuplicateCode
-                MsgBox("Curriculum Code already existed", vbExclamation)
-                UpdateData = False
-
-            Case TranDBResult.DuplicateID
-                MsgBox("ID already existed.", vbExclamation)
-                UpdateData = False
-
-            Case TranDBResult.InvalidSubjectDepartmentID
-                MsgBox("Invalid Department.", vbExclamation)
-                HLTxt(txtProgram)
-                UpdateData = False
 
             Case Else
                 'fatal
@@ -228,14 +241,37 @@ Public Class frmAddCurriculum
 
     Private Sub cmdGetDepartmentTitle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdGetProgram.Click
         Dim Prog As tAcademicPrograms
+        Dim AcademicProgram, AcadProgramID, TextObject, sProgramCode As String
 
-        If ProgramRecordExist(cboCampus.SelectedItem.Col2) <> TranDBResult.Success Then
-            MsgBox("Unable to continue. There are no record yet in Academic Program Entries", vbExclamation)
-            Exit Sub
-        End If
 
         Dim frm As New PickAcademicPrograms()
-        frm.GetAcademicProgram(cboCampus.SelectedItem.Col2, txtProgram.Text, ProgramID)
+
+        Select Case State
+            Case FormState.addFormState
+                If ProgramRecordExist(cboCampus.SelectedItem.Col2) <> TranDBResult.Success Then
+                    MsgBox("Unable to continue. There are no record yet in Academic Program Entries", vbExclamation)
+                    Exit Sub
+                End If
+
+                frm.GetAcademicProgram(cboCampus.SelectedItem.Col2, TextObject, AcadProgramID)
+
+            Case FormState.updateFormState
+                If ProgramRecordExist(cboCampusID.Text) <> TranDBResult.Success Then
+                    MsgBox("Unable to continue. There are no record yet in Academic Program Entries", vbExclamation)
+                    Exit Sub
+                End If
+
+                frm.GetAcademicProgram(cboCampusID.Text, TextObject, AcadProgramID)
+        End Select
+
+        If Len(TextObject) > 0 Then
+            txtProgram.Text = TextObject
+        End If
+
+        If Len(AcadProgramID) > 0 Then
+            ProgramID = AcadProgramID
+        End If
+
 
         If ProgramID <> "" Then
 

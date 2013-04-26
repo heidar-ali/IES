@@ -57,7 +57,7 @@ Module modRSCurriculum
             Exit Function
         End If
 
-        Dim com As New MySqlCommand("INSERT INTO tblCurriculum(CurriculumID,CurriculumCode,Description,Notes,IsLocked,DateLocked,ProgramID,MajorID,CreationDate,CreatedBy) VALUES (@ID,@Code,@Desc,@Note,@IsLocked,@DateLocked,@ProgramID,@MajorID,@Date,@User)", clsCon.con)
+        Dim com As New MySqlCommand("INSERT INTO tblCurriculum(CurriculumID,CurriculumCode,Description,Notes,IsLocked,DateLocked,ProgramID,MajorID,CreationDate,CreatedBy) VALUES (@ID,@Code,@Desc,@Note,@IsLocked,@DateLocked,@ProgramID,@MajorID,CurDate(),@User)", clsCon.con)
 
         com.Parameters.Add("@ID", MySqlDbType.VarChar, 45).Value = tCur.CurriculumID
         com.Parameters.Add("@Code", MySqlDbType.VarChar, 45).Value = tCur.CurriculumCode
@@ -67,7 +67,6 @@ Module modRSCurriculum
         com.Parameters.Add("@DateLocked", MySqlDbType.Date).Value = tCur.DateLocked
         com.Parameters.Add("@ProgramID", MySqlDbType.VarChar, 45).Value = tCur.ProgramID
         com.Parameters.Add("@MajorID", MySqlDbType.VarChar, 45).Value = tCur.MajorID
-        com.Parameters.Add("@Date", MySqlDbType.Date).Value = tCur.CreationDate
         com.Parameters.Add("@User", MySqlDbType.VarChar, 45).Value = tCur.CreatedBy
 
         com.ExecuteNonQuery()
@@ -101,7 +100,7 @@ Module modRSCurriculum
 
     Public Function EditCurriculum(ByVal tCur As tCurriculum) As TranDBResult
 
-        Dim com As New MySqlCommand("UPDATE tblCurriculum SET CurriculumID=@ID,CurriculumCode=@Code,Description=@Desc,Notes=@Note,IsLocked=@IsLocked,DateLocked=@DateLocked,DepartmentID=@DepartmentID,CreationDate=@Date,CreatedBy=@User WHERE CurriculumID='" & tCur.CurriculumID & "'", clsCon.con)
+        Dim com As New MySqlCommand("UPDATE tblCurriculum SET CurriculumID=@ID,CurriculumCode=@Code,Description=@Desc,Notes=@Note,IsLocked=@IsLocked,DateLocked=@DateLocked,DepartmentID=@DepartmentID,ModifiedData=CURDATE(),ModifiedBy=@User WHERE CurriculumID='" & tCur.CurriculumID & "'", clsCon.con)
 
         com.Parameters.Add("@ID", MySqlDbType.VarChar, 45).Value = tCur.CurriculumID
         com.Parameters.Add("@Code", MySqlDbType.VarChar, 45).Value = tCur.CurriculumCode
@@ -110,7 +109,6 @@ Module modRSCurriculum
         com.Parameters.Add("@IsLocked", MySqlDbType.Int16).Value = tCur.IsLocked
         com.Parameters.Add("@DateLocked", MySqlDbType.Date).Value = tCur.DateLocked
         com.Parameters.Add("@DepartmentID", MySqlDbType.VarChar, 45).Value = tCur.ProgramID
-        com.Parameters.Add("@Date", MySqlDbType.Date).Value = tCur.CreationDate
         com.Parameters.Add("@User", MySqlDbType.VarChar, 45).Value = tCur.CreatedBy
 
         com.ExecuteNonQuery()
